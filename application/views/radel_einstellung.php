@@ -54,19 +54,19 @@
 	        <div class='col-sm-6'>    
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-map-marker"></i></span>
-	                <input class="form-control" name="sql_Anschrift_Privat" value="<?= $pre_Anschrift_Privat ?>" id="user_addr" placeholder="Ihre Privatanschrift" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_Anschrift_Privat" value="<?= $pre_Anschrift_Privat ?>" id="user_addr" placeholder="Ihre Privatanschrift" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 	        <div class='col-sm-2'>
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-	                <input class="form-control" name="sql_PLZ_Privat" value="<?= $pre_PLZ_Privat ?>" id="user_plz" placeholder="Postleitzahl" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_PLZ_Privat" value="<?= $pre_PLZ_Privat ?>" id="user_plz" placeholder="Postleitzahl" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 			<div class='col-sm-4'>
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-building"></i></span>
-	                <input class="form-control" name="sql_Stadt_Privat" value="<?= $pre_Stadt_Privat ?>" id="user_town" placeholder="Stadt" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_Stadt_Privat" value="<?= $pre_Stadt_Privat ?>" id="user_town" placeholder="Stadt" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 	    </div>
@@ -75,19 +75,19 @@
 	        <div class='col-sm-6'>    
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-map-marker"></i></span>
-	                <input class="form-control" name="sql_Anschrift_Arbeit" value="<?= $pre_Anschrift_Arbeit ?>" id="company_addr" placeholder="Anschrift der Arbeitsstelle" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_Anschrift_Arbeit" value="<?= $pre_Anschrift_Arbeit ?>" id="company_addr" placeholder="Anschrift der Arbeitsstelle" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 	        <div class='col-sm-2'>
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
-	                <input class="form-control" name="sql_PLZ_Arbeit" value="<?= $pre_PLZ_Arbeit ?>" id="company_plz" placeholder="Postleitzahl" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_PLZ_Arbeit" value="<?= $pre_PLZ_Arbeit ?>" id="company_plz" placeholder="Postleitzahl" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 	        <div class='col-sm-4'>
 	            <div class='form-group input-group'>
 		            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-building"></i></span>
-	                <input class="form-control" name="sql_Stadt_Arbeit" value="<?= $pre_Stadt_Arbeit ?>" id="company_town" placeholder="Stadt" required="true" size="30" type="text" />
+	                <input class="form-control" name="sql_Stadt_Arbeit" value="<?= $pre_Stadt_Arbeit ?>" id="company_town" placeholder="Stadt" required="false" size="30" type="text" />
 	            </div>
 	        </div>
 	    </div>

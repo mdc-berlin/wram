@@ -17,12 +17,28 @@ jQuery(function($){
                 dayStatus: 'Setze DD als ersten Wochentag', dateStatus: 'Wähle D, M d',
                 dateFormat: 'dd.mm.yy', firstDay: 1, 
                 initStatus: 'Wähle ein Datum', isRTL: false};
+        $.datepicker.regional['en'] = {clearText: 'clear', clearStatus: 'clear current date',
+                closeText: 'close', closeStatus: 'close without saving',
+                prevText: '< back', prevStatus: 'view last month',
+                nextText: 'forward >', nextStatus: 'view next month',
+                currentText: 'today', currentStatus: '',
+                monthNames: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+                monthNamesShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                monthStatus: 'view other month', yearStatus: 'view other year',
+                weekHeader: 'w', weekStatus: 'week of month',
+                dayNames: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+                dayNamesShort: ['So','Mo','Tu','We','Th','Fr','Sa'],
+                dayNamesMin: ['So','Mo','Tu','We','Th','Fr','Sa'],
+                dayStatus: 'change DD os first day of week', dateStatus: 'choose D, M d',
+                dateFormat: 'dd.mm.yy', firstDay: 1,
+                initStatus: 'choose date', isRTL: false};
+
 });
 
 function highlightDays(date) {
 	
-	var date_from = '2015-07-31';
-	var date_to   = '2015-09-30';
+	var date_from = '2016-07-31';
+	var date_to   = '2016-09-30';
 	
 	if (new Date(date) > new Date(date_from) && new Date(date) <= new Date(date_to)) {
 		return [true, '', ''];

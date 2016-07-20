@@ -58,14 +58,14 @@ class Ldap_model extends CI_Model {
 
 	            ldap_close($this->ldap_con);
 	
-	            $this->ldap_vorname   = $data[0]["givenname"][0];
-	            $this->ldap_nachname  = $data[0]["sn"][0];
-	            $this->ldap_kennung   = $data[0]["cn"][0];
-	            $this->ldap_abteilung = $data[0]["department"][0];
+	            $this->ldap_vorname   = @$data[0]["givenname"][0];
+	            $this->ldap_nachname  = @$data[0]["sn"][0];
+	            $this->ldap_kennung   = @$data[0]["cn"][0];
+	            $this->ldap_abteilung = @$data[0]["department"][0];
 	            
 	            //?
-	            $this->ldap_tel       = $data[0]["telephonenumber"][0];
-	            $this->ldap_email     = $data[0]["mail"][0];
+	            $this->ldap_tel       = @$data[0]["telephonenumber"][0];
+	            $this->ldap_email     = @$data[0]["mail"][0];
 			}
 			elseif ($_SERVER['REMOTE_USER'] == 'test123') {
 				$this->ldap_vorname		= 'Max';

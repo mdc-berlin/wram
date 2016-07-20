@@ -22,6 +22,10 @@
                 <li><a href="main/charts/firma">meine Firma</a></li>
               </ul>
             </li>
+            <li><a href="/"><?php
+                $query = $this->db->get('teilnehmer');
+                echo $query->num_rows();
+                ?> Teilnehmer</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 		  	<?= $admin ?>

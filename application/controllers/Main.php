@@ -119,7 +119,7 @@ class Main extends CI_Controller {
 		$data['body_class']	= 'einstellung';
 		if ($this->eintragen_model->is_user_new() || $ext_user == 'new') {
 			$data['user_is_new']	= $this->load->view('radel_user_is_new', '', TRUE);
-			$data['button_name']	= 'einragen';
+			$data['button_name']	= 'eintragen';
 		}
 		else {
 			$data['user_is_new']	= '';

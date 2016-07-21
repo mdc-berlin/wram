@@ -1,5 +1,5 @@
 <?php
-if($_SERVER['SERVER_NAME']=="warm-wram.mdc-berlin.net") {
+if($_SERVER['SERVER_NAME']=="warm-test.mdc-berlin.net") {
     echo "<h1 style='background: red; border: 1px solid black; border-radius: 3px;'>dies ist das WRAM-Testsytem</h1>";
 
 }

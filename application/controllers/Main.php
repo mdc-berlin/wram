@@ -16,7 +16,7 @@ class Main extends CI_Controller {
 		$navi['admin']		= $this->eintragen_model->gen_admin_menu($this->ldap_model->ldap_kennung);
 
 		$data['navigation'] = $this->load->view('radel_navigation', $navi, TRUE);
-		$data['headline']	= 'Hallo';
+		$data['headline']	= '';
 		$data['body_class']	= 'start';
 		$data['content']	= $this->load->view('radel_index', '', TRUE);
 		$data['server']     = $_SERVER['SERVER_NAME'];

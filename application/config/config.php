@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'https://wram-test.mdc-berlin.net/';
+$config['base_url'] = $_SERVER['SERVER_NAME'];
 
 /*
 |--------------------------------------------------------------------------

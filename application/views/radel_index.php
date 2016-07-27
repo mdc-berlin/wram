@@ -1,5 +1,5 @@
 <?php
-require_once ('../config/translations.php');
+require_once('translations.php');
 
 
 

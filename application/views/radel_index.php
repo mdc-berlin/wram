@@ -49,8 +49,8 @@ green.campus@mdc-berlin.de";
 
 $text['de-de'] = $text['de'];
 
-$lang = array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']));
-$body = nl2br($text[$lang]);
+$lang = @array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']));
+$body = nl2br(@$text[$lang]);
 if($body == '') {
     $body = nl2br($text['en']);
 }

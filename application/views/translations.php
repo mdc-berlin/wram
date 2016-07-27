@@ -12,7 +12,7 @@ Step 2: report each kilometer you ride
 Typical distances:
 <ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul>
 General information about the event can be found here:
-<a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de/</a> (in German)
+<a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a> (in German)
   
 You can get answers to specific questions by writing
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>
@@ -34,7 +34,7 @@ Schritt 2: die gefahrenen Kilometer eingetragen
 Typische Strecken
 <ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul>
 Alle allgemeinen Infos zum Wettbewerb:
-<a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de/</a>  
+<a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a>  
 
 Spezifische Fragen beantworten
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");

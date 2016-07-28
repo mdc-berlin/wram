@@ -172,12 +172,12 @@ $(document).ready(function () {
 	
 		$( "#datepicker" ).datepicker({
 			dayNamesShort: $.datepicker.regional[ language ].dayNamesShort,
-			dayNamesMin: $.datepicker.regional[ "de" ].dayNamesMin,
-			dayNames: $.datepicker.regional[ "de" ].dayNames,
-	  		monthNamesShort: $.datepicker.regional[ "de" ].monthNamesShort,
-			monthNames: $.datepicker.regional[ "de" ].monthNames,
-			prevText: $.datepicker.regional[ "de" ].prevText,
-			nextText: $.datepicker.regional[ "de" ].nextText,
+			dayNamesMin: $.datepicker.regional[ language ].dayNamesMin,
+			dayNames: $.datepicker.regional[ language ].dayNames,
+	  		monthNamesShort: $.datepicker.regional[ language ].monthNamesShort,
+			monthNames: $.datepicker.regional[ language ].monthNames,
+			prevText: $.datepicker.regional[ language ].prevText,
+			nextText: $.datepicker.regional[ language ].nextText,
 			firstDay: 1,
 	// 		yearRange: '2015:2015',
 			dateFormat: 'dd-mm-yy',

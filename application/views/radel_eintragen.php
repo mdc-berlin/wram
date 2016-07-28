@@ -52,7 +52,7 @@ require('translations.php');
 			<div id="datepicker"></div>
 		</div></div>
   <div class="col-md-8">
-	  <h3>2. <?= $strings['step'][$lang]; ?> <?= $check_2 ?>: <br /> <?= $strings['entry_distance'][$lang]; ?> <?= $datum ?></h3>
+	  <h3>2. <?= $strings['entry_step'][$lang]; ?> <?= $check_2 ?>: <br /> <?= $strings['entry_distance'][$lang]; ?> <?= $datum ?></h3>
 
 		<div class="input-group">
  

@@ -23,7 +23,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
         <?= $strings['text'][$lang]; ?>
     </div>
     <div style="float: left">
-        <table style="padding: 2px">
+        <table style="padding: 2px; margin: 2px">
             <tr>
                 <td><b><?= $strings['department'][$lang]; ?></b></td>
                 <td><b><?= $strings['user'][$lang]; ?></b></td>
@@ -35,7 +35,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                     <td>
                         <?= $row->d; ?>
                     </td>
-                    <td>
+                    <td style="text-align: right">
                         <?= $row->c; ?>
                     </td>
                 </tr>

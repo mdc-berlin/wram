@@ -34,7 +34,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<div class="container" id="container">
     
-    <h2><?= $headline ?></h2>
 	<?= $content ?>
 
 	</div>

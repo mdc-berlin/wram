@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once('../views/translations.php');
 class Main extends CI_Controller {
 
 	public function index()
@@ -136,7 +135,7 @@ class Main extends CI_Controller {
 		
 		$data['navigation'] = $this->load->view('radel_navigation', $navi, TRUE);
 		
-		$data['headline']		= $strings['settings'][$lang];
+		$data['headline']		= 'Einstellung';
 		$data['dyn_info']   	= $this->eintragen_model->dyn_info();
 		$data['ldap_nachname']	= $this->ldap_model->ldap_nachname;
 		$data['ldap_vorname']	= $this->ldap_model->ldap_vorname;
@@ -268,7 +267,7 @@ class Main extends CI_Controller {
 
 		$data['navigation'] = $this->load->view('radel_navigation', $navi, TRUE);
 		
-		$data['headline']	= 'Statistiken';
+		$data['headline']	= 'Statistiken: ';
 		$data['body_class']	= 'charts';
 		$data['server']     = $_SERVER['SERVER_NAME'];
 		if ($user = $this->eintragen_model->get_tn_obj($this->ldap_model->ldap_kennung)) {

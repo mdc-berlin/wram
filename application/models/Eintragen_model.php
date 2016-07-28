@@ -436,6 +436,7 @@ class Eintragen_model extends CI_Model {
 		
 		public function gen_user_chart($user_id = NULL)
 		{
+            global $lang;
 			if ($user_id) {
 				
 				$query = $this->db->query("SELECT t.Vorname as Vorname, t.Name as Name, Teilnehmer_id, (sum(f.Km_zur_Arbeit)+sum(f.Km_Privat)) as Km_Gesamt FROM `fahrtenbuch` f, teilnehmer t where t.id=f.Teilnehmer_id GROUP BY Teilnehmer_id ORDER BY 2 DESC");
@@ -444,7 +445,7 @@ class Eintragen_model extends CI_Model {
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->gen_table_start();
-					$ret	   .= $this->gen_table_head(array('Rang', 'Name', 'Gesamt km'));
+					$ret	   .= $this->gen_table_head(array('Rang'.$lang, 'Name', 'Gesamt km'));
 					$ret	   .= $this->gen_tbody_start();
 					
 					foreach ($query->result() as $row) {

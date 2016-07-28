@@ -19,17 +19,17 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 ?>
 
 <div style="background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-    <div style="float: left">
+    <div style="float: left; width: 80%">
         <?= $strings['text'][$lang]; ?>
     </div>
     <div style="float: left">
-        <table>
+        <table style="padding: 2px">
             <tr>
-                <td><?= $strings['department'][$lang]; ?></td>
-                <td><?= $strings['user'][$lang]; ?></td>
+                <td><b><?= $strings['department'][$lang]; ?></b></td>
+                <td><b><?= $strings['user'][$lang]; ?></b></td>
             </tr>
             <?php
-            $query = $this->db->query("select count(*) as c, substring_index(Abteilung,'/',1) as d from teilnehmer group by d order by c");
+            $query = $this->db->query("select count(*) as c, substring_index(Abteilung,'/',1) as d from teilnehmer where d != '' group by d order by c");
             foreach($query->result() as $row) {
                 ?><tr>
                     <td>

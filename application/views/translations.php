@@ -39,8 +39,16 @@ Alle allgemeinen Infos zum Wettbewerb:
 Spezifische Fragen beantworten
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");
 
-$strings['Einstellung']['de'] = 'Einstellung';
-$strings['Einstellung']['en'] = 'Settings';
+$strings['settings'] = array('de' => 'Einstellung', 'en' => 'Settings');
+$strings['km'] = array('de' => 'Kilometer eintragen', 'en' => 'report ride');
+$strings['stats'] = array('de' => 'Statistiken', 'en' => 'Stats');
+$strings['user'] = array('de' => 'Teilnehmer', 'en' => 'Participants');
+$strings['greeting'] = array('de' => 'Hallo', 'en' => 'Hello');
+$strings['me'] = array('de' => 'Ich', 'en' => 'Me');
+$strings['team'] = array('de' => 'mein Team', 'en' => 'my Team');
+$strings['corp'] = array('de' => 'Meine Firma', 'en' => 'my Cooperation');
+//$strings[''] = array('de' => '', 'en' => '');
+
 
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
 if($lang == 'de-de') { $lang = 'de'; }

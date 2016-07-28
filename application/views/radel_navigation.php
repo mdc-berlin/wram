@@ -15,24 +15,24 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['Einstellung'][$lang]; ?></a></li>
-            <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> Kilometer eintragen</a></li>
+            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['settings'][$lang]; ?></a></li>
+            <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>
             <li class="dropdown <?= $active_3 ?>">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bar-chart"></i> Statistiken <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bar-chart"></i> <?= $strings['stats'][$lang]; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="main/charts/ich">ich</a></li>
-                <li><a href="main/charts/team">mein Team</a></li>
-                <li><a href="main/charts/firma">meine Firma</a></li>
+                <li><a href="main/charts/ich"><?= $strings['me'][$lang]; ?></a></li>
+                <li><a href="main/charts/team"><?= $strings['team'][$lang]; ?></a></li>
+                <li><a href="main/charts/firma"><?= $strings['corp'][$lang]; ?></a></li>
               </ul>
             </li>
             <li><a href="/"><?php
                 $query = $this->db->get('teilnehmer');
                 echo $query->num_rows();
-                ?> Teilnehmer</a></li>
+                ?> <?= $strings['user'][$lang]; ?></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 		  	<?= $admin ?>
-            <li><a href="/">Hallo, <?= $user ?><span class="sr-only"></span></a></li>
+            <li><a href="/"><?= $strings['greeting'][$lang]; ?>, <?= $user ?><span class="sr-only"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

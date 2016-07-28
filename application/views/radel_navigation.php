@@ -1,4 +1,5 @@
 ﻿    <!-- Fixed navbar -->
+    <?php print_r($strings); ?>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">

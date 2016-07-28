@@ -46,13 +46,13 @@ require('translations.php');
 
 <div class="bs-example row">
  			
-  <div class="col-md-4"><h3>1. <?= $strings['entry_step'][$lang]; ?> <?= $check_1 ?><br /></h3>
+  <div class="col-md-4"><h3>1. <?= $strings['entry_step'][$lang]; ?> <?= $check_1 ?></h3>
 
 		<div class="input-group">
 			<div id="datepicker"></div>
 		</div></div>
   <div class="col-md-8">
-	  <h3>2. <?= $strings['entry_step'][$lang]; ?> <?= $check_2 ?>: <br /> <?= $strings['entry_distance'][$lang]; ?> <?= $datum ?></h3>
+	  <h3>2. <?= $strings['entry_step'][$lang]; ?> <?= $check_2 ?>: </h3>
 
 		<div class="input-group">
  

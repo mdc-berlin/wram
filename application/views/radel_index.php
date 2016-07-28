@@ -44,4 +44,5 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             ?>
         </table>
     </div>
+    <div style="clear: both"/>
 </div>

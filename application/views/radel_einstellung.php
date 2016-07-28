@@ -9,14 +9,14 @@
 
 	<div class="bs-example">
 		
-		<h3>Ihre Daten</h3>
+		<h3><?= $strings['yourdata'][$lang]; ?></h3>
 
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-<?= $pre_sql_gender ?>" id="gender_icon"></i></span>
 			
 			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default first <?= $pre_sql_anrede_m ?>" id="anrede_m" name="sql_anrede" value="m">Herr</button>
-				<button type="button" class="btn btn-default <?= $pre_sql_anrede_w ?>" id="anrede_w" name="sql_anrede" value="w">Frau</button>
+				<button type="button" class="btn btn-default first <?= $pre_sql_anrede_m ?>" id="anrede_m" name="sql_anrede" value="m"><?= $strings['male'][$lang]; ?></button>
+				<button type="button" class="btn btn-default <?= $pre_sql_anrede_w ?>" id="anrede_w" name="sql_anrede" value="w"><?= $strings['female'][$lang]; ?></button>
 			</div>
 		</div>
 		
@@ -37,7 +37,7 @@
 	
 	<div class="bs-example" data-example-id="static-dropdown">
 		
-		<h3>Ihre Strecke zur Arbeit</h3>
+		<h3><?= $strings[''][$lang]; ?></h3>
 
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-bicycle"></i></span>

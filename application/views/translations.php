@@ -40,13 +40,18 @@ Spezifische Fragen beantworten
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");
 
 $strings['settings'] = array('de' => 'Einstellung', 'en' => 'Settings');
-$strings['km'] = array('de' => 'Kilometer eintragen', 'en' => 'report ride');
+$strings['km'] = array('de' => 'Kilometer eintragen', 'en' => 'Report Ride');
 $strings['stats'] = array('de' => 'Statistiken', 'en' => 'Stats');
 $strings['user'] = array('de' => 'Teilnehmer', 'en' => 'Participants');
 $strings['greeting'] = array('de' => 'Hallo', 'en' => 'Hello');
 $strings['me'] = array('de' => 'Ich', 'en' => 'Me');
 $strings['team'] = array('de' => 'mein Team', 'en' => 'my Team');
 $strings['corp'] = array('de' => 'Meine Firma', 'en' => 'my Cooperation');
+//$strings['male'] = array('de' => 'Herr', 'en' => 'male');
+//$strings['female'] = array('de' => 'Frau', 'en' => 'female');
+//$strings['yourdata'] = array('de' => 'Ihre Daten', 'en' => 'your data');
+//$strings[''] = array('de' => '', 'en' => '');
+//$strings[''] = array('de' => '', 'en' => '');
 //$strings[''] = array('de' => '', 'en' => '');
 
 

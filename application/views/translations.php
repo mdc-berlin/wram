@@ -47,12 +47,32 @@ $strings['greeting'] = array('de' => 'Hallo', 'en' => 'Hello');
 $strings['me'] = array('de' => 'Ich', 'en' => 'Me');
 $strings['team'] = array('de' => 'mein Team', 'en' => 'my Team');
 $strings['corp'] = array('de' => 'Meine Firma', 'en' => 'my Cooperation');
-//$strings['male'] = array('de' => 'Herr', 'en' => 'male');
-//$strings['female'] = array('de' => 'Frau', 'en' => 'female');
-//$strings['yourdata'] = array('de' => 'Ihre Daten', 'en' => 'your data');
+$strings['male'] = array('de' => 'Herr', 'en' => 'male');
+$strings['female'] = array('de' => 'Frau', 'en' => 'female');
+$strings['yourdata'] = array('de' => 'Ihre Daten', 'en' => 'your data');
+
+$strings['distance'] = array('de' => 'Ihre Strecke zur Arbeit', 'en' => '');
+$strings['distance_km'] = array('de' => 'Hin- und Rückweg in vollen Kilometern', 'en' => '');
+$strings['team_your'] = array('de' => 'Ihr Team', 'en' => '');
+$strings['team_exit'] = array('de' => 'Team verlassen', 'en' => '');
+$strings['team_no'] = array('de' => 'kein Team', 'en' => '');
+$strings['team_add'] = array('de' => 'einem Team hinzufügen', 'en' => '');
+$strings['team_create'] = array('de' => 'neues Team gründen', 'en' => '');
+$strings['change'] = array('de' => 'aendern', 'en' => '');
+
+
+
 //$strings[''] = array('de' => '', 'en' => '');
-//$strings[''] = array('de' => '', 'en' => '');
-//$strings[''] = array('de' => '', 'en' => '');
+
+
+
+
+
+
+
+
+1000plus
+
 
 
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));

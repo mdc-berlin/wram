@@ -1,3 +1,6 @@
+<?php
+require('translations.php');
+?>
 	<input type="hidden" name="first_call" value="1" />
 	<input type="hidden" name="gender" id="gender" value="" />
 	<input type="hidden" name="is_new_user" id="is_new_user" value="<?= $pre_is_new_user ?>" />
@@ -37,7 +40,7 @@
 	
 	<div class="bs-example" data-example-id="static-dropdown">
 		
-		<h3><?= $strings[''][$lang]; ?></h3>
+		<h3><?= $strings['distance'][$lang]; ?></h3>
 
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-bicycle"></i></span>
@@ -45,7 +48,7 @@
 			<span class="input-group-addon" id="basic-addon2">km</span>
 		</div>
 		
-		<p>Hin- und Rückweg in vollen Kilometern</p>
+		<p><?= $strings['distance_km'][$lang]; ?></p>
 		
 		<div class="input-group">
 		<fieldset>
@@ -99,7 +102,7 @@
 
 
 	<div class="bs-example">
-	<h3>Ihr Team</h3>
+	<h3><?= $strings['team_your'][$lang]; ?></h3>
 
 		<div class="input-group">
 			<span tabindex="-1" data-toggle="dropdown" class="input-group-addon btn btn-default dropdown-toggle" id="basic-addon1"><i class="fa fa-users"></i></span>
@@ -108,9 +111,9 @@
 				if (! $pre_team_name) {
 			?>		
 			<select class="form-control" name="sql_team_change" id="team_change">
-			  <option value="none">Kein Team</option>
-			  <option value="add">einem Team hinzufügen</option>
-			  <option value="new">neues Team gründen</option>
+			  <option value="none"><?= $strings['team_no'][$lang]; ?></option>
+			  <option value="add"><?= $strings['team_add'][$lang]; ?></option>
+			  <option value="new"><?= $strings['team_create'][$lang]; ?></option>
 			</select>
 			<?php
 				}
@@ -129,7 +132,7 @@
 			<?php
 				if ($pre_team_name) {
 					?>
-			<button type="submit" class="btn btn-primary" id="delete_team" name="sql_delete_team">Team verlassen</button>		
+			<button type="submit" class="btn btn-primary" id="delete_team" name="sql_delete_team"><?= $strings['team_exit'][$lang]; ?></button>
 					<?php
 				}
 			?>
@@ -138,7 +141,7 @@
     
     <?= $user_is_new ?>
 	
-  	<button type="submit" class="btn btn-primary"><?= $button_name ?></button>
+  	<button type="submit" class="btn btn-primary"><?= $strings['change'][$lang]; ?></button>
 	
 	
 	</form>

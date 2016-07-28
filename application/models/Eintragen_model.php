@@ -1,4 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+$lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
+if($lang == 'de-de') { $lang = 'de'; }
+if($lang != 'de') { $lang = 'en'; }
 
 class Eintragen_model extends CI_Model {
 	
@@ -390,7 +393,7 @@ class Eintragen_model extends CI_Model {
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->eintragen_model->gen_table_start();
-					$ret	   .= $this->eintragen_model->gen_table_head(array('Datum', 'km zur Arbeit', 'sonstige km','Summe km'));
+					$ret	   .= $this->eintragen_model->gen_table_head(array('Datum'.$lang, 'km zur Arbeit', 'sonstige km','Summe km'));
 					$ret	   .= $this->eintragen_model->gen_tbody_start();
 				
 					$cnt = 0;

@@ -1,6 +1,6 @@
 ﻿    <!-- Fixed navbar -->
     <?php
-    require_once('translations.php');
+    require('translations.php');
     ?>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">

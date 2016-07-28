@@ -1,13 +1,14 @@
 <?php
-//require_once('translations.php');
+require('translations.php');
 
 
 
 
 
 if($_SERVER['SERVER_NAME']=="wram-test.mdc-berlin.net") {
-    echo "<div style='background: red; border: 1px solid black; border-radius: 5px; padding 10px; margin: 10px;'>dies ist das WRAM-Testsytem</div>";
-
+    ?>
+    <div style='background: red; border: 1px solid black; border-radius: 5px; padding 10px; margin: 10px;'>dies ist das WRAM-Testsytem</div>
+    <?php
 }
 if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     ?>

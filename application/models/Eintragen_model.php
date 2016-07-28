@@ -3,6 +3,8 @@ $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
 if($lang == 'de-de') { $lang = 'de'; }
 if($lang != 'de') { $lang = 'en'; }
 
+global $lang;
+
 class Eintragen_model extends CI_Model {
 	
 		// <p class="bg-success"></p>

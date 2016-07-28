@@ -18,11 +18,11 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 
 ?>
 
-<div style="background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-    <div style="float: left; width: 80%">
+<div style="">
+    <div style="float: left; width: 80%; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
         <?= $strings['text'][$lang]; ?>
     </div>
-    <div style="float: left">
+    <div style="float: left; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
         <table style="padding: 2px; margin: 2px">
             <tr>
                 <td><b><?= $strings['department'][$lang]; ?></b></td>

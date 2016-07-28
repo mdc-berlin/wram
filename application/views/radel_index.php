@@ -33,10 +33,10 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             foreach($query->result() as $row) {
                 ?><tr>
                     <td>
-                        <?= $row->$d ?>
+                        <?= $row->$d; ?>
                     </td>
                     <td>
-                        <?= $row->$c ?>
+                        <?= $row->$c; ?>
                     </td>
                 </tr>
             <?php

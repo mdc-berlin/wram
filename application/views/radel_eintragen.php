@@ -83,7 +83,7 @@ require('translations.php');
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
-	  <textarea class="form-control" id="begr" name="sql_bemerkungen" rows="3" placeholder="Erläuterungen zu sonstigen Fahrten"><?= $km_begr ?></textarea>
+	  <textarea class="form-control" id="begr" name="sql_bemerkungen" rows="3" placeholder="<?= $strings['entry_comment'][$lang]; ?>"><?= $km_begr ?></textarea>
     </div>
   </div>
   

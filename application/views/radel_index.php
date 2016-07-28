@@ -29,7 +29,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                 <td><b><?= $strings['user'][$lang]; ?></b></td>
             </tr>
             <?php
-            $query = $this->db->query("select count(*) as c, substring_index(Abteilung,'/',1) as d from teilnehmer where d != '' group by d order by c");
+            $query = $this->db->query("select count(*) as c, substring_index(Abteilung,'/',1) as d from teilnehmer where Abteilung != '' group by d order by c");
             foreach($query->result() as $row) {
                 ?><tr>
                     <td>

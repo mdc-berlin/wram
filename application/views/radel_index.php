@@ -27,7 +27,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
         </tr>
         <?php
         $query = $this->db->query("select count(*) as c, substring_index(Abteilung,'/',1) as dep from teilnehmer group by dep order by c");
-        print_r($query);
+        print_r($query->result());
         ?>
     </table>
 </div>

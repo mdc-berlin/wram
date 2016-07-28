@@ -51,29 +51,18 @@ $strings['male'] = array('de' => 'Herr', 'en' => 'male');
 $strings['female'] = array('de' => 'Frau', 'en' => 'female');
 $strings['yourdata'] = array('de' => 'Ihre Daten', 'en' => 'your data');
 
-$strings['distance'] = array('de' => 'Ihre Strecke zur Arbeit', 'en' => '');
-$strings['distance_km'] = array('de' => 'Hin- und Rückweg in vollen Kilometern', 'en' => '');
-$strings['team_your'] = array('de' => 'Ihr Team', 'en' => '');
-$strings['team_exit'] = array('de' => 'Team verlassen', 'en' => '');
-$strings['team_no'] = array('de' => 'kein Team', 'en' => '');
-$strings['team_add'] = array('de' => 'einem Team hinzufügen', 'en' => '');
-$strings['team_create'] = array('de' => 'neues Team gründen', 'en' => '');
-$strings['change'] = array('de' => 'aendern', 'en' => '');
+$strings['distance'] = array('de' => 'Ihre Strecke zur Arbeit', 'en' => 'your distance to your job');
+$strings['distance_km'] = array('de' => 'Hin- und Rückweg in vollen Kilometern', 'en' => 'your distance in km (back and forth)');
+$strings['team_your'] = array('de' => 'Ihr Team', 'en' => 'your team');
+$strings['team_exit'] = array('de' => 'Team verlassen', 'en' => 'leave team');
+$strings['team_no'] = array('de' => 'kein Team', 'en' => 'no team');
+$strings['team_add'] = array('de' => 'einem Team beitreten', 'en' => 'join a team');
+$strings['team_create'] = array('de' => 'neues Team gründen', 'en' => 'create new team');
+$strings['change'] = array('de' => 'ändern', 'en' => 'change');
 
 
 
 //$strings[''] = array('de' => '', 'en' => '');
-
-
-
-
-
-
-
-
-1000plus
-
-
 
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
 if($lang == 'de-de') { $lang = 'de'; }

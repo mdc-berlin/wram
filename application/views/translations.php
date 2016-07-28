@@ -39,6 +39,9 @@ Alle allgemeinen Infos zum Wettbewerb:
 Spezifische Fragen beantworten
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");
 
+$strings['Einstellung']['de'] = 'Einstellung';
+$strings['Einstellung']['en'] = 'Settings';
+
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
 if($lang == 'de-de') { $lang = 'de'; }
 if($lang != 'de') { $lang = 'en'; }

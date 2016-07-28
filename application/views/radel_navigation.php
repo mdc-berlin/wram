@@ -1,7 +1,7 @@
 ﻿    <!-- Fixed navbar -->
     <?php
     require_once('translations.php');
-    print_r($strings); ?>
+    ?>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -15,7 +15,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> Einstellung</a></li>
+            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['Einstellung'][$lang]; ?></a></li>
             <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> Kilometer eintragen</a></li>
             <li class="dropdown <?= $active_3 ?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bar-chart"></i> Statistiken <span class="caret"></span></a>

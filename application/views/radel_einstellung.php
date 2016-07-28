@@ -1,5 +1,5 @@
 <?php
-require('../translations.php');
+require('translations.php');
 ?>
 	<input type="hidden" name="first_call" value="1" />
 	<input type="hidden" name="gender" id="gender" value="" />

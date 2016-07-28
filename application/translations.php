@@ -66,6 +66,13 @@ $strings['entry_bikeused'] = array('de' => 'Mit dem Rad zur Arbeitsstelle gefahr
 $strings['entry_misc'] = array('de' => 'Sonstige Fahrten mit dem Rad', 'en' => 'other distances with the bike');
 $strings['submit'] = array('de' => 'eintragen', 'en' => 'submit');
 $strings['entry_comment'] = array('de' => 'Kommentar', 'en' => 'comment');
+
+//$strings['stats_date'] = array('de' => 'Datum', 'en' => 'date');
+//$strings['stats_km_work'] = array('de' => 'km zur Arbeit', 'en' => 'km to work');
+//$strings['stats_km_misc'] = array('de' => 'sonstige km', 'en' => 'misc km');
+//$strings['stats_km_sum'] = array('de' => 'Summe km', 'en' => 'total km');
+//$strings['stats_rank'] = array('de' => 'Rank', 'en' => 'rank');
+
 //$strings[''] = array('de' => '', 'en' => '');
 
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));

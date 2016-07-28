@@ -1,5 +1,7 @@
 ﻿    <!-- Fixed navbar -->
-    <?php print_r($strings); ?>
+    <?php
+    require_once('translations.php');
+    print_r($strings); ?>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">

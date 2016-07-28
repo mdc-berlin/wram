@@ -60,8 +60,11 @@ $strings['team_add'] = array('de' => 'einem Team beitreten', 'en' => 'join a tea
 $strings['team_create'] = array('de' => 'neues Team gründen', 'en' => 'create new team');
 $strings['change'] = array('de' => 'ändern', 'en' => 'change');
 
-
-
+$strings['entry_step'] = array('de' => 'Schritt', 'en' => 'step');
+$strings['entry_distance'] = array('de' => 'Strecke', 'en' => 'distance');
+$strings['entry_bikeused'] = array('de' => 'Mit dem Rad zur Arbeitsstelle gefahren', 'en' => 'used the bike to get to work');
+$strings['entry_misc'] = array('de' => 'Sonstige Fahrten mit dem Rad', 'en' => 'other distances with the bike');
+$strings['submit'] = array('de' => 'eintragen', 'en' => 'submit');
 //$strings[''] = array('de' => '', 'en' => '');
 
 $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));

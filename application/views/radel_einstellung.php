@@ -1,7 +1,6 @@
 <?php
 require('translations.php');
 ?>
-<h2><?= $strings['settings'][$lang]; ?></h2>
 	<input type="hidden" name="first_call" value="1" />
 	<input type="hidden" name="gender" id="gender" value="" />
 	<input type="hidden" name="is_new_user" id="is_new_user" value="<?= $pre_is_new_user ?>" />

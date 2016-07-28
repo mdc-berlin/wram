@@ -16,7 +16,9 @@
 		<?= $dyn_info ?>
  	</div>
 
-
+<?php
+require('translations.php');
+?>
 <!-- Button trigger modal -->
 <!-- button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
@@ -44,18 +46,18 @@
 
 <div class="bs-example row">
  			
-  <div class="col-md-4"><h3>1. Schritt <?= $check_1 ?><br />Datum wählen</h3>
+  <div class="col-md-4"><h3>1. <?= $strings['entry_step'][$lang]; ?> <?= $check_1 ?><br /></h3>
 
 		<div class="input-group">
 			<div id="datepicker"></div>
 		</div></div>
   <div class="col-md-8">
-	  <h3>2. Schritt <?= $check_2 ?>: <br />Ihre Strecke <?= $datum ?></h3>
+	  <h3>2. <?= $strings['step'][$lang]; ?> <?= $check_2 ?>: <br /> <?= $strings['entry_distance'][$lang]; ?> <?= $datum ?></h3>
 
 		<div class="input-group">
  
    <input type="hidden" name="remote_user" value="<?= $remote_user ?>" />
-   <input type="checkbox" name="check_arbeit" id="check_arbeit" value="<?= $km_arbeit ?>" <?= $km_work?'checked':''?>> Mit dem Rad zur Arbeitsstelle gefahren<br />
+   <input type="checkbox" name="check_arbeit" id="check_arbeit" value="<?= $km_arbeit ?>" <?= $km_work?'checked':''?>> <?= $strings['entry_bikeused'][$lang]; ?><br />
    
     <div class="form-group">
     <div class="input-group">
@@ -66,7 +68,7 @@
   </div>
   
   <br /><br />
-  Sonstige Fahrten mit dem Rad<br />
+  <?= $strings['entry_misc'][$lang]; ?><br />
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-bicycle"></i></div>
@@ -78,7 +80,7 @@
   
   <br />
   
-  <div class="form-group">
+  <div class="form-group" style="display: none">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
 	  <textarea class="form-control" id="begr" name="sql_bemerkungen" rows="3" placeholder="Erläuterungen zu sonstigen Fahrten"><?= $km_begr ?></textarea>
@@ -86,7 +88,7 @@
   </div>
   
   <br />
-  <button type="submit" class="btn btn-primary">eintragen</button>
+  <button type="submit" class="btn btn-primary"><?= $strings['submit'][$lang]; ?></button>
   </div>
 		
 		

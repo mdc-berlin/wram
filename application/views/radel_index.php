@@ -23,8 +23,8 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
         <?= $strings['text'][$lang]; ?>
     </div>
     <div style="float: left; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-        <table style="padding: 2px; margin: 2px; border: 1px solid gray">
-            <tr>
+        <table style="padding: 2px; margin: 2px;">
+            <tr style=" border: 1px solid gray">
                 <td><b><?= $strings['department'][$lang]; ?></b></td>
                 <td><b><?= $strings['user'][$lang]; ?></b></td>
             </tr>

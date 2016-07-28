@@ -24,7 +24,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     </div>
     <div style="float: left; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
         <table>
-            <tr style=" border: 1px solid gray">
+            <tr style=" border-bottom: 1px solid gray">
                 <td style="padding: 2px; margin: 2px;"><b><?= $strings['department'][$lang]; ?></b></td>
                 <td style="padding: 2px; margin: 2px;"><b><?= $strings['user'][$lang]; ?></b></td>
             </tr>
@@ -33,10 +33,10 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             foreach($query->result() as $row) {
                 ?><tr>
                     <td>
-                        <?= $row->d; ?>
+                        &nbsp;<?= $row->d; ?>
                     </td>
                     <td style="text-align: right">
-                        <?= $row->c; ?>
+                        <?= $row->c; ?>&nbsp;
                     </td>
                 </tr>
             <?php

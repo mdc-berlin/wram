@@ -1,6 +1,8 @@
 var SelectedDates = [];
 var myServer = '';
 
+var language = window.navigator.userLanguage || window.navigator.language;
+alert(language);
 
 jQuery(function($){
         $.datepicker.regional['de'] = {clearText: 'löschen', clearStatus: 'aktuelles Datum löschen',

@@ -3,8 +3,6 @@ $lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
 if($lang == 'de-de') { $lang = 'de'; }
 if($lang != 'de') { $lang = 'en'; }
 
-global $lang;
-
 class Eintragen_model extends CI_Model {
 	
 		// <p class="bg-success"></p>
@@ -385,6 +383,7 @@ class Eintragen_model extends CI_Model {
 		
 		public function gen_user_list($user_id = NULL)
 		{
+            global $lang;
 			if ($user_id) {
 				
 	    		$query = $this->db->select('*, week(`Datum`) AS week')->order_by('Datum', 'ASC')->get_where('fahrtenbuch', array('Teilnehmer_id' => $user_id)); 
@@ -475,6 +474,7 @@ class Eintragen_model extends CI_Model {
 		
 		public function gen_group_list($group_id = NULL)
 		{
+            global $lang;
 			if ($group_id) {
 				
 	    		$query = $this->db->query("SELECT Datum, SUM(f.`Km_zur_Arbeit`) as Km_Arbeit_sum, SUM(f.`Km_Privat`) as Km_Privat_sum
@@ -484,7 +484,7 @@ class Eintragen_model extends CI_Model {
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->eintragen_model->gen_table_start();
-					$ret	   .= $this->eintragen_model->gen_table_head(array('Datum', 'km zur Arbeit', 'sonstige km','Summe km'));
+					$ret	   .= $this->eintragen_model->gen_table_head(array('Datum'.$lang, 'km zur Arbeit', 'sonstige km','Summe km'));
 					$ret	   .= $this->eintragen_model->gen_tbody_start();
 				
 					$cnt = 0;

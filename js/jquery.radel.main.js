@@ -1,11 +1,6 @@
 var SelectedDates = [];
 var myServer = '';
 
-<?
-$lang = strtolower(@array_shift(explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE'])));
-if($lang == 'de-de') { $lang = 'de'; }
-if($lang != 'de') { $lang = 'en'; }
-?>
 
 jQuery(function($){
         $.datepicker.regional['de'] = {clearText: 'löschen', clearStatus: 'aktuelles Datum löschen',
@@ -174,7 +169,7 @@ $(document).ready(function () {
 
 	
 		$( "#datepicker" ).datepicker({
-			dayNamesShort: $.datepicker.regional[ "<?= $lang; ?>" ].dayNamesShort,
+			dayNamesShort: $.datepicker.regional[ "de" ].dayNamesShort,
 			dayNamesMin: $.datepicker.regional[ "de" ].dayNamesMin,
 			dayNames: $.datepicker.regional[ "de" ].dayNames,
 	  		monthNamesShort: $.datepicker.regional[ "de" ].monthNamesShort,

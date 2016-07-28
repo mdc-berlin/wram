@@ -2,7 +2,7 @@ var SelectedDates = [];
 var myServer = '';
 
 var language = window.navigator.userLanguage || window.navigator.language;
-alert(language);
+if(language != 'de') { language='en'; }
 
 jQuery(function($){
         $.datepicker.regional['de'] = {clearText: 'löschen', clearStatus: 'aktuelles Datum löschen',
@@ -171,7 +171,7 @@ $(document).ready(function () {
 
 	
 		$( "#datepicker" ).datepicker({
-			dayNamesShort: $.datepicker.regional[ "de" ].dayNamesShort,
+			dayNamesShort: $.datepicker.regional[ language ].dayNamesShort,
 			dayNamesMin: $.datepicker.regional[ "de" ].dayNamesMin,
 			dayNames: $.datepicker.regional[ "de" ].dayNames,
 	  		monthNamesShort: $.datepicker.regional[ "de" ].monthNamesShort,

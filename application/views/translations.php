@@ -44,6 +44,7 @@ $strings['km'] = array('de' => 'Kilometer eintragen', 'en' => 'Report Ride');
 $strings['stats'] = array('de' => 'Statistiken', 'en' => 'Stats');
 $strings['user'] = array('de' => 'Teilnehmer', 'en' => 'Participants');
 $strings['department'] = array('de' => 'Abteilung', 'en' => 'Department');
+$strings['department_desc'] = array('de' => 'interne MDC Abteilung', 'en' => 'internal MDC Department');
 $strings['greeting'] = array('de' => 'Hallo', 'en' => 'Hello');
 $strings['me'] = array('de' => 'Ich', 'en' => 'Me');
 $strings['team'] = array('de' => 'mein Team', 'en' => 'my Team');

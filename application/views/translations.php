@@ -22,7 +22,7 @@ Get with it and stay fit!
 
 Your Green Ambassadors");
 
-$strings['text']['de'] = nl2br("<h2>Liebe Kolleginnnen und Kollegen</h2>
+$strings['text']['de'] = nl2br("<h2>Liebe Kolleginnen und Kollegen</h2>
   
 am 1. August geht es los: Wir vom Campus Buch treten gegen andere öffentliche Betriebe Berlins in einem Fahrrad-Wettbewerb an. Bei \"Wer radelt am meisten?\" geht es um die Wege, die mit dem Rad von den Teilnehmerinnen und Teilnehmern gefahren werden. Die Kilometer werden zusammengerechnet und mit den anderen teilnehmenden Unternehmen
 verglichen. Es zählen alle Strecken ­ es ist also egal, ob sie auf dem Weg zum Campus oder in der Freizeit gefahren werden. Die Aktion läuft bis Ende September; der Einstieg ist jederzeit möglich.

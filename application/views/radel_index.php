@@ -28,6 +28,20 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                     <td style="padding: 2px; margin: 2px;"><b>WRAM-Team</b></td>
                     <td style="padding: 2px; margin: 2px;"><b><?= $strings['user'][$lang]; ?></b></td>
                 </tr>
+                <?php
+                $query = $this->db->query("select count(Team_id) as c, teams.Name from teilnehmer inner join teams on teilnehmer.Team_id = teams.id group by teams.Name order by c desc;");
+                foreach($query->result() as $row) {
+                    ?><tr>
+                    <td>
+                        &nbsp;<?= $row->Name; ?>
+                    </td>
+                    <td style="text-align: right">
+                        <?= $row->c; ?>/3&nbspl
+                    </td>
+                    </tr>
+                    <?php
+                }
+                ?>
             </table>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">

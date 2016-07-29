@@ -41,7 +41,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             <?php
             }
             ?>
-            <tr><td colspan="2" style="text-align: right"><?= $strings['department_desc'][$lang]; ?></td></tr>
+            <tr><td colspan="2" style="text-align: right"><small><?= $strings['department_desc'][$lang]; ?></small></td></tr>
         </table>
     </div>
     <div style="float: right; width: 70%; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">

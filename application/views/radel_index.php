@@ -36,7 +36,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                         &nbsp;<?= $row->Name; ?>
                     </td>
                     <td style="text-align: right">
-                        <?= $row->c; ?>/3&nbspl
+                        <?= $row->c; ?>/3&nbsp;
                     </td>
                     </tr>
                     <?php

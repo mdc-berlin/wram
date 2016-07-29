@@ -166,7 +166,7 @@ class Eintragen_model extends CI_Model {
 				$cnt = 0;
 				
 				foreach ($query->result() as $row) {
-					if ($this->count_members($row->id) =< 3) {
+					if ($this->count_members($row->id) <= 3) {
 						$data[$cnt]['id']	= $row->id;
 						$data[$cnt]['Name']	= $row->Name;
 						$data[$cnt]['free']	= (3 - $this->count_members($row->id));

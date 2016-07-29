@@ -21,7 +21,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 <div style="">
 
 
-    <div style="float: right; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+    <div style="float: right; width: 25%; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
         <table>
             <tr style=" border-bottom: 1px solid gray">
                 <td style="padding: 2px; margin: 2px;"><b>MDC <?= $strings['department'][$lang]; ?></b></td>
@@ -43,7 +43,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             ?>
         </table>
     </div>
-    <div style="float: right; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+    <div style="float: right; width: 70%; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
         <?= $strings['text'][$lang]; ?>
     </div>
     <div style="clear: both"/>

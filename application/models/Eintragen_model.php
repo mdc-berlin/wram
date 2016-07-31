@@ -725,8 +725,7 @@ class Eintragen_model extends CI_Model {
 		    $ret_work_arr = array();
 		    
 		    if ($group_id) {
-				if (is_numeric($group_id)) {
-				}
+		    	if(is_numeric($group_id)) {
 					$query = $this->db->query("SELECT Datum, SUM(f.`Km_zur_Arbeit`) as Km_Arbeit_sum, SUM(f.`Km_Privat`) as Km_Privat_sum
 						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Team_id IN($group_id) GROUP BY Datum");
 				} else {

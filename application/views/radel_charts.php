@@ -1,6 +1,6 @@
 <?php
 require('translations.php');
-echo end(explode('/',$_SERVER['PHP_SELF']));
+echo @end(explode('/',$_SERVER['PHP_SELF']));
 ?>
 		<h2><?= $strings['stats'][$lang]; ?>: <?= $strings['stats'][$lang]; ?> </h2>
 

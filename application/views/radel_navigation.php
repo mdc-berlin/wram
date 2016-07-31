@@ -20,9 +20,9 @@
             <li class="dropdown <?= $active_3 ?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bar-chart"></i> <?= $strings['stats'][$lang]; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="main/charts/ich"><?= $strings['me'][$lang]; ?></a></li>
+                <li><a href="main/charts/ich"><?= $strings['ich'][$lang]; ?></a></li>
                 <li><a href="main/charts/team"><?= $strings['team'][$lang]; ?></a></li>
-                  <li><a href="main/charts/department"><?= $strings['dep'][$lang]; ?></a></li>
+                  <li><a href="main/charts/dep"><?= $strings['dep'][$lang]; ?></a></li>
                 <li><a href="main/charts/firma"><?= $strings['firma'][$lang]; ?></a></li>
               </ul>
             </li>

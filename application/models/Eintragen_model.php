@@ -532,12 +532,20 @@ class Eintragen_model extends CI_Model {
 			
 			if ($group_id){
 
-			
-				$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name, t.Vorname, t.Name
+				if(is_numeric($group_id)) {
+					$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name, t.Vorname, t.Name
 						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
 						JOIN teams te ON (t.`Team_id` = te.`id`)
 						WHERE Team_id in ($group_id)
-						GROUP BY `Teilnehmer_id`"); 
+						GROUP BY `Teilnehmer_id`");
+				} else {
+					$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name, t.Vorname, t.Name
+						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
+						JOIN teams te ON (t.`Team_id` = te.`id`)
+						WHERE Abteilung = '$group_id')
+						GROUP BY `Teilnehmer_id`");
+
+				}
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->gen_table_start();
@@ -730,7 +738,7 @@ class Eintragen_model extends CI_Model {
 						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Team_id IN($group_id) GROUP BY Datum");
 				} else {
 					$query = $this->db->query("SELECT Datum, SUM(f.`Km_zur_Arbeit`) as Km_Arbeit_sum, SUM(f.`Km_Privat`) as Km_Privat_sum
-						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Abteilung = \"$group_id\" GROUP BY Datum");
+						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Abteilung = '$group_id' GROUP BY Datum");
 				}
 				if ($query->num_rows() > 0) {
 					foreach ($query->result() as $row) {

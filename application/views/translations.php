@@ -48,6 +48,7 @@ $strings['department_desc'] = array('de' => 'interne MDC Abteilung', 'en' => 'in
 $strings['greeting'] = array('de' => 'Hallo', 'en' => 'Hello');
 $strings['me'] = array('de' => 'Ich', 'en' => 'Me');
 $strings['team'] = array('de' => 'mein Team', 'en' => 'my Team');
+$strings['dep'] = array('de' => 'meine Abteilung', 'en' => 'my Department');
 $strings['corp'] = array('de' => 'Meine Firma', 'en' => 'my Cooperation');
 $strings['male'] = array('de' => 'Herr', 'en' => 'male');
 $strings['female'] = array('de' => 'Frau', 'en' => 'female');

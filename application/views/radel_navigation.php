@@ -22,6 +22,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="main/charts/ich"><?= $strings['me'][$lang]; ?></a></li>
                 <li><a href="main/charts/team"><?= $strings['team'][$lang]; ?></a></li>
+                  <li><a href="main/charts/department"><?= $strings['dep'][$lang]; ?></a></li>
                 <li><a href="main/charts/firma"><?= $strings['corp'][$lang]; ?></a></li>
               </ul>
             </li>

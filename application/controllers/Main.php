@@ -287,7 +287,7 @@ class Main extends CI_Controller {
 				$data['table']	   .= $this->eintragen_model->gen_user_chart($user->id);
 			}
 			
-			else if ($type == 'dep' && $user->Abteilung)	{
+			else if ($type == 'department' && $user->Abteilung)	{
 				list($dates, $km_work, $km_priv) = $this->eintragen_model->gen_js_group_data($user->Abteilung);
 				$data['js']			 = 'var my_labels = ['.$dates.'];'."\n";
 				$data['js']			.= 'var km_work	  = ['.$km_work.'];'."\n";

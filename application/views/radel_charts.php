@@ -1,8 +1,7 @@
 <?php
 require('translations.php');
-echo @end(explode('/',$_SERVER['PHP_SELF']));
 ?>
-		<h2><?= $strings['stats'][$lang]; ?>: <?= $strings['stats'][$lang]; ?> </h2>
+		<h2><?= $strings['stats'][$lang]; ?>: <?= $strings[@end(explode('/',$_SERVER['PHP_SELF']))][$lang]; ?> </h2>
 
 			<div>
 				<canvas id="canvas"></canvas>

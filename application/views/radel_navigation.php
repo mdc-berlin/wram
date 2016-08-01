@@ -19,9 +19,9 @@
           <ul class="nav navbar-nav">
             <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?php
                 if($registerd) {
-                  $strings['settings'][$lang];
+                  echo $strings['settings'][$lang];
                 } else {
-                  $strings['register'][$lang];
+                  echo $strings['register'][$lang];
                 }
                 ?></a></li>
             <?php

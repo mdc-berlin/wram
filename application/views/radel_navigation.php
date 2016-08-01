@@ -21,7 +21,7 @@
                 if($registerd) {
                   $strings['settings'][$lang];
                 } else {
-                  $strings['settings'][$lang];
+                  $strings['register'][$lang];
                 }
                 ?></a></li>
             <?php

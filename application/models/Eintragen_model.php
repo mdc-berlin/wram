@@ -685,8 +685,7 @@ class Eintragen_model extends CI_Model {
 		    $ret_work_arr = array();
 		    
 		    $query = $this->db->order_by('Datum', 'asc')->get_where('fahrtenbuch', array('Teilnehmer_id' => $user_id));
-            print_r($query);
-            #$query = $this->db->query('select * from `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
+
 			if ($query->num_rows() > 0) {
 				foreach ($query->result() as $row) {
 					$km[$row->Datum]['Arbeit'] = $row->Km_zur_Arbeit;

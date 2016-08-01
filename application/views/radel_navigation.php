@@ -17,7 +17,7 @@
           <ul class="nav navbar-nav">
             <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['settings'][$lang]; ?></a></li>
             <?php
-            $query = $this->db->get_where('teilnehmer',array('LDAP_Kennung' => str_replace("@MDC-BERLIN.NET","",$SERVER['REMOTE_USER'])));
+            $query = $this->db->get_where('teilnehmer',array('LDAP_Kennung' => str_replace("@MDC-BERLIN.NET","",$_SERVER['REMOTE_USER'])));
             echo $query->num_rows();
             ?>
             <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>

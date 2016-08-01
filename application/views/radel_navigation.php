@@ -18,7 +18,7 @@
             <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['settings'][$lang]; ?></a></li>
             <?php
             $query = $this->db->query('select * from `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
-            echo $query->num_rows;
+            echo $query->num_rows();
             ?>
             <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>
             <li class="dropdown <?= $active_3 ?>">

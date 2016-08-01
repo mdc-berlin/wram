@@ -1,6 +1,8 @@
 ﻿    <!-- Fixed navbar -->
     <?php
     require('translations.php');
+    $query = $this->db->query('select * from `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
+    $registerd = $query->num_rows();
     ?>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -15,21 +17,31 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['settings'][$lang]; ?></a></li>
+            <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?php
+                if($registerd) {
+                  $strings['settings'][$lang];
+                } else {
+                  $strings['settings'][$lang];
+                }
+                ?></a></li>
             <?php
-            $query = $this->db->query('select * from `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
-            echo $query->num_rows();
+              if($registerd) {
+                ?>
+                <li class="<?= $active_2 ?>"><a href="main/eintragen"><i
+                        class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>
+                <li class="dropdown <?= $active_3 ?>">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
+                        class="fa fa-bar-chart"></i> <?= $strings['stats'][$lang]; ?> <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="main/charts/ich"><?= $strings['ich'][$lang]; ?></a></li>
+                    <li><a href="main/charts/team"><?= $strings['team'][$lang]; ?></a></li>
+                    <li><a href="main/charts/dep"><?= $strings['dep'][$lang]; ?></a></li>
+                    <li><a href="main/charts/firma"><?= $strings['firma'][$lang]; ?></a></li>
+                  </ul>
+                </li>
+                <?php
+              }
             ?>
-            <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>
-            <li class="dropdown <?= $active_3 ?>">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bar-chart"></i> <?= $strings['stats'][$lang]; ?> <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="main/charts/ich"><?= $strings['ich'][$lang]; ?></a></li>
-                <li><a href="main/charts/team"><?= $strings['team'][$lang]; ?></a></li>
-                  <li><a href="main/charts/dep"><?= $strings['dep'][$lang]; ?></a></li>
-                <li><a href="main/charts/firma"><?= $strings['firma'][$lang]; ?></a></li>
-              </ul>
-            </li>
             <li><a href="/"><?php
                 $query = $this->db->get('teilnehmer');
                 echo $query->num_rows();

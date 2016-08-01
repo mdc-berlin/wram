@@ -40,6 +40,7 @@ Spezifische Fragen beantworten
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");
 
 $strings['settings'] = array('de' => 'Einstellung', 'en' => 'Settings');
+$strings['register'] = array('de' => 'Registrieren', 'en' => 'Register');
 $strings['km'] = array('de' => 'Kilometer eintragen', 'en' => 'Report Ride');
 $strings['stats'] = array('de' => 'Statistiken', 'en' => 'Stats');
 $strings['user'] = array('de' => 'Teilnehmer', 'en' => 'Participants');

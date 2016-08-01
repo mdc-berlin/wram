@@ -287,12 +287,21 @@ class Main extends CI_Controller {
 				$data['table']	   .= $this->eintragen_model->gen_user_chart($user->id);
 			}
 			
-			else if ($type == 'team' && $user->Team_id)	{
-				list($dates, $km_work, $km_priv) = $this->eintragen_model->gen_js_group_data($user->Team_id);
+			else if ($type == 'dep' && $user->Abteilung)	{
+				list($dates, $km_work, $km_priv) = $this->eintragen_model->gen_js_group_data($user->Abteilung);
 				$data['js']			 = 'var my_labels = ['.$dates.'];'."\n";
 				$data['js']			.= 'var km_work	  = ['.$km_work.'];'."\n";
 				$data['js']			.= 'var km_priv	  = ['.$km_priv.'];'."\n";
 	
+				$data['table']		= $this->eintragen_model->gen_group_members($user->Abteilung);
+				$data['table']	   .= $this->eintragen_model->gen_group_list($user->Abteilung);
+				$data['table']	   .= $this->eintragen_model->gen_group_chart($user->Abteilung);
+			} else if ($type == 'team' && $user->Team_id)	{
+				list($dates, $km_work, $km_priv) = $this->eintragen_model->gen_js_group_data($user->Team_id);
+				$data['js']			 = 'var my_labels = ['.$dates.'];'."\n";
+				$data['js']			.= 'var km_work	  = ['.$km_work.'];'."\n";
+				$data['js']			.= 'var km_priv	  = ['.$km_priv.'];'."\n";
+
 				$data['table']		= $this->eintragen_model->gen_group_members($user->Team_id);
 				$data['table']	   .= $this->eintragen_model->gen_group_list($user->Team_id);
 				$data['table']	   .= $this->eintragen_model->gen_group_chart($user->Team_id);

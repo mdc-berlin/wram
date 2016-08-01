@@ -17,7 +17,7 @@
           <ul class="nav navbar-nav">
             <li class="<?= $active_1 ?>"><a href="main/einstellung"><i class="fa fa-cog"></i> <?= $strings['settings'][$lang]; ?></a></li>
             <?php
-            $query = $this->db->select(' * `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
+            $query = $this->db->query('select * from `teilnehmer` where concat(`Vorname`," ",`Name`) = "'.$user.'"');
             print_r($query);
             ?>
             <li class="<?= $active_2 ?>"><a href="main/eintragen"><i class="fa fa-bicycle"></i> <?= $strings['km'][$lang]; ?></a></li>

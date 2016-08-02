@@ -717,10 +717,6 @@ class Eintragen_model extends CI_Model {
 
 
 			}
-            if($_SERVER['REMOTE_USER'] == 'decker@MDC-BERLIN.NET')
-            {
-                print_r(array(join(',',$ret_date_arr), join(',',$ret_work_arr), join(',',$ret_priv_arr)));
-            }
 
 			return (array(join(',',$ret_date_arr), join(',',$ret_work_arr), join(',',$ret_priv_arr)));
 	    }

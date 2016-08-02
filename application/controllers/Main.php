@@ -310,7 +310,7 @@ class Main extends CI_Controller {
 				$data['table']		= 'Sie gehören zur Zeit keinem Team an.';
 			}
 			else {
-				$data['table']		= 'Es konnten keine Charts erstellt werden.';
+				$data['table']		= '<iframe src="https://www.wer-radelt-am-meisten.de/#charts" style="border: 0px; width: 95%; height: 95%;"> </iframe>';
 			}
 
 

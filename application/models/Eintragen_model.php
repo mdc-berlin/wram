@@ -442,13 +442,13 @@ class Eintragen_model extends CI_Model {
             global $lang;
 			if ($user_id) {
 				
-				$query = $this->db->query("SELECT t.Vorname as Vorname, t.Name as Name, Teilnehmer_id, (sum(f.Km_zur_Arbeit)+sum(f.Km_Privat)) as Km_Gesamt FROM `fahrtenbuch` f, teilnehmer t where t.id=f.Teilnehmer_id GROUP BY Teilnehmer_id ORDER BY 2 DESC");
+				$query = $this->db->query("SELECT t.Vorname as Vorname, t.Name as Name, Teilnehmer_id, (sum(f.Km_zur_Arbeit)+sum(f.Km_Privat)) as Km_Gesamt FROM `fahrtenbuch` f, teilnehmer t where t.id=f.Teilnehmer_id GROUP BY Teilnehmer_id ORDER BY Km_Gesamt DESC");
 				$ret = '';
 				$cnt = 0;
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->gen_table_start();
-					$ret	   .= $this->gen_table_head(array('Rang'.$lang, 'Name', 'Gesamt km'));
+					$ret	   .= $this->gen_table_head(array('Rang', 'Name', 'Gesamt km'));
 					$ret	   .= $this->gen_tbody_start();
 					
 					foreach ($query->result() as $row) {
@@ -600,10 +600,7 @@ class Eintragen_model extends CI_Model {
 		{
 			if ($group_id) {
 				
-				$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name
-					FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
-					JOIN teams te ON (t.`Team_id` = te.`id`)
-					GROUP BY Team_id");
+				$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name 					FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
 				$ret = '';
 				$cnt = 0;
 				if ($query->num_rows() > 0) {

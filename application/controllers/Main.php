@@ -285,10 +285,6 @@ class Main extends CI_Controller {
 	
 				$data['table']		= $this->eintragen_model->gen_user_list($user->id);
 				$data['table']	   .= $this->eintragen_model->gen_user_chart($user->id);
-                if($_SERVER['REMOTE_USER'] == 'decker@MDC-BERLIN.NET')
-                {
-                    print_r($data);
-                }
 			}
 			
 			else if ($type == 'dep' && $user->Abteilung)	{

@@ -21,7 +21,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 <div style="">
 
 
-    <div style="float: right; width: 25%;">
+    <div style="float: right; width: 25%; font-size: 75%">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?php
             // top 5 users

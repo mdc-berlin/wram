@@ -32,7 +32,7 @@
 }
 
 body {
-  font-family: 'LatoLatinLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -41,7 +41,7 @@ body {
 }
 
 nav {
-	font-family: 'LatoLatin';
+	font-family: Verdana;
 }
 
 div#container {

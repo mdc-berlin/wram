@@ -599,14 +599,22 @@ class Eintragen_model extends CI_Model {
 		public function gen_group_chart($group_id = NULL)
 		{
 			if ($group_id) {
-				echo $group_id;
-				$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name 					FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
+				if(is_numeric($group_id)) {
+                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
+                } else {
+                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , t.Abteilung as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by Abteilung order by Km_ges_sum desc;");
+                }
 				$ret = '';
 				$cnt = 0;
 				if ($query->num_rows() > 0) {
 					
 					$ret 		= $this->gen_table_start();
-					$ret	   .= $this->gen_table_head(array('Rang', 'Team Name', 'Gesamt km'));
+                    if(is_numeric($group_id)) {
+                        $ret .= $this->gen_table_head(array('Rang', 'Team Name', 'Gesamt km'));
+                    } else {
+                        $ret .= $this->gen_table_head(array('Rang', 'Abteilung', 'Gesamt km'));
+                    }
+
 					$ret	   .= $this->gen_tbody_start();
 					
 					foreach ($query->result() as $row) {

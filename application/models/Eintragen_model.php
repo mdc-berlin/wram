@@ -599,7 +599,7 @@ class Eintragen_model extends CI_Model {
 		public function gen_group_chart($group_id = NULL)
 		{
 			if ($group_id) {
-				
+				echo $group_id;
 				$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name 					FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
 				$ret = '';
 				$cnt = 0;

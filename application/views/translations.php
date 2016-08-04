@@ -17,6 +17,9 @@ General information about the event can be found here:
 You can get answers to specific questions by writing
 <a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>
 
+tech support
+<a href='mailto:mathias.decker@mdc-berlin.de'>mathias.decker@mdc-berlin.de</a>
+
 Get with it and stay fit!
 - for yourself and the environment -
 
@@ -37,7 +40,10 @@ Alle allgemeinen Infos zum Wettbewerb:
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a>  
 
 Spezifische Fragen beantworten
-<a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>");
+<a href='mailto:green.campus@mdc-berlin.de'>green.campus@mdc-berlin.de</a>
+
+Technische Fragen gerne an
+<a href='mailto:mathias.decker@mdc-berlin.de'>mathias.decker@mdc-berlin.de</a>");
 
 $strings['settings'] = array('de' => 'Einstellung', 'en' => 'Settings');
 $strings['register'] = array('de' => 'Registrieren', 'en' => 'Register');

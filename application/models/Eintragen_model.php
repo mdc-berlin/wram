@@ -602,7 +602,7 @@ class Eintragen_model extends CI_Model {
 				if(is_numeric($group_id)) {
                     $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
                 } else {
-                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,'/',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by Name order by Km_ges_sum desc;");
+                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc;");
                 }
 				$ret = '';
 				$cnt = 0;

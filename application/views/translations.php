@@ -10,7 +10,7 @@ Step 1: register here
 Step 2: report each kilometer you ride
 
 <u>Typical distances:</u>
-<ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul><u>What can I report?</u>
+<ul><li>- S Buch - Campus Buch: 1km</li><li>- S Pankow - Campus Buch: 11km</li><li>- Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>- BIMSB-Neubau - Campus Buch: 17km</li></ul><u>What can I report?</u>
 <ul><li>- private ride's on the weekend or vacation</li><li>- every km on an ergometer</li><li>- simply anything what you rode with your bike</li></ul><u>General information about the event can be found here:</u>
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a> (in German)
   
@@ -35,11 +35,8 @@ Schritt 1: hier anmelden
 Schritt 2: die gefahrenen Kilometer eingetragen
 
 <u>Typische Strecken</u>
-<ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul>
-<u>Was darf ich ein eintragen?</u>
-<ul><li>Radtouren-Kilometer vom Wochenende / Urlaub</li><li>Ergometer-Kilometer</li><li>im Grunde alles was mit dem Rad gefahren wird</li></ul>
-
-<u>Alle allgemeinen Infos zum Wettbewerb:</u>
+<ul><li>- S Buch - Campus Buch: 1km</li><li>- S Pankow - Campus Buch: 11km</li><li>- Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>- BIMSB-Neubau - Campus Buch: 17km</li></ul><u>Was darf ich ein eintragen?</u>
+<ul><li>- Radtouren-Kilometer vom Wochenende / Urlaub</li><li>- Ergometer-Kilometer</li><li>- im Grunde alles was mit dem Rad gefahren wird</li></ul><u>Alle allgemeinen Infos zum Wettbewerb:</u>
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a>  
 
 Spezifische Fragen beantworten

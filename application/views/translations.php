@@ -5,13 +5,17 @@ Get ready to mount the saddle of your bike. August 1st is the first day of a cyc
   
 The contest is called \"Who pedals the farthest,\" and the winning team will be ­ you guessed it ­ the organization whose members put the highest number of kilometers their odometers. You can join any time until the completion of the competition at the end of September. Once you join, all the distance traveled on your bike counts, even those free-time outings.
 
-How to sign up:
+<u>How to sign up:</u>
 Step 1: register here
 Step 2: report each kilometer you ride
 
-Typical distances:
+<u>Typical distances:</u>
 <ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul>
-General information about the event can be found here:
+
+<u>What can I report?</u>
+<ul><li>private ride's on the weekend or vacation</li><li>every km on an ergometer</li><li>simply anything what you rode with your bike</li></ul>
+
+<u>General information about the event can be found here:</u>
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a> (in German)
   
 You can get answers to specific questions by writing
@@ -30,13 +34,17 @@ $strings['text']['de'] = nl2br("<h2>Liebe Kolleginnen und Kollegen</h2>
 am 1. August geht es los: Wir vom Campus Buch treten gegen andere öffentliche Betriebe Berlins in einem Fahrrad-Wettbewerb an. Bei \"Wer radelt am meisten?\" geht es um die Wege, die mit dem Rad von den Teilnehmerinnen und Teilnehmern gefahren werden. Die Kilometer werden zusammengerechnet und mit den anderen teilnehmenden Unternehmen
 verglichen. Es zählen alle Strecken ­ es ist also egal, ob sie auf dem Weg zum Campus oder in der Freizeit gefahren werden. Die Aktion läuft bis Ende September; der Einstieg ist jederzeit möglich.
   
-Wie mitmachen?
+<u>Wie mitmachen?</u>
 Schritt 1: hier anmelden
 Schritt 2: die gefahrenen Kilometer eingetragen
 
-Typische Strecken
+<u>Typische Strecken</u>
 <ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul>
-Alle allgemeinen Infos zum Wettbewerb:
+
+<u>Was darf ich ein eintragen?</u>
+<ul><li>Radtouren-Kilometer vom Wochenende / Urlaub</li><li>Ergometer-Kilometer</li><li>im Grunde alles was mit dem Rad gefahren wird</li></ul>
+
+<u>Alle allgemeinen Infos zum Wettbewerb:</u>
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a>  
 
 Spezifische Fragen beantworten

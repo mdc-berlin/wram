@@ -11,7 +11,7 @@ Step 2: report each kilometer you ride
 
 <u>Typical distances:</u>
 <ul><li>S Buch - Campus Buch: 1km</li><li>S Pankow - Campus Buch: 11km</li><li>Anna-Louisa-Karsch-Straße (Geschäftsstelle Helmholtz-Gemeinschaft) - Campus Buch: 16km</li><li>BIMSB-Neubau - Campus Buch: 17km</li></ul><u>What can I report?</u>
-<ul><li>private ride's on the weekend or vacation</li><li>every km on an ergometer</li><li>simply anything what you rode with your bike</li></ul><u>General information about the event can be found here:</u>
+<ul><li>- private ride's on the weekend or vacation</li><li>- every km on an ergometer</li><li>- simply anything what you rode with your bike</li></ul><u>General information about the event can be found here:</u>
 <a href='https://www.wer-radelt-am-meisten.de/'>www.wer-radelt-am-meisten.de</a> (in German)
   
 You can get answers to specific questions by writing

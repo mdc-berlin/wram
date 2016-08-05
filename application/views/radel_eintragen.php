@@ -62,7 +62,7 @@ require('translations.php');
     <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-bicycle"></i></div>
-      <input type="number" name="sql_arbeits_km" id="sql_arbeits_km" class="form-control" placeholder="Kilometer" value="<?= $km_work ?>" readonly>
+      <input type="number" name="sql_arbeits_km" id="sql_arbeits_km" class="form-control" placeholder="Kilometer" value="<?= $km_work ?>">
       <div class="input-group-addon">km</div>
     </div>
   </div>

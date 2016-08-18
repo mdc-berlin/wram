@@ -83,11 +83,12 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
            // print_r($km->result()[0]->total);
             $world_percent = ($km->result()[0]->total / 40075)*100;
+            $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
             ?>
             <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
                 <div style="background: #2b2b2b; width: 50%; border-radius: 2px; margin: 1px; height: 4px"></div>
             </div>
-            We rode <?= $km->result()[0]->total ?> in $days, this <?= $world_percent ?> around the world
+            We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= round($world_percent) ?>% around the world.
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

@@ -7,7 +7,8 @@ require('translations.php');
 
 if($_SERVER['SERVER_NAME']=="wram-test.mdc-berlin.net") {
     ?>
-    <div style='background: red; border: 1px solid black; border-radius: 5px; padding 10px; margin: 10px;'>dies ist das WRAM-Testsytem</div>
+    <div style='background: red; border: 1px solid black; border-radius: 5px; padding 10px; margin: 10px;'
+         xmlns="http://www.w3.org/1999/html">dies ist das WRAM-Testsytem</div>
     <?php
 }
 if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
@@ -101,11 +102,9 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
     </div>
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-            <div>
-                <div style="float: left">
+            <table><td>
                     <img src="images/world.png" style="width: 48px">
-                </div>
-                <div style="padding-left: 10px; float: left">
+            </td><td>
                     <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
                         <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
                     </div>
@@ -119,10 +118,8 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                         <?php
                     }
                     ?>
-                </div>
-                <div style="clear: both" />
-
-            </div>
+                    
+            </td></table>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

@@ -78,9 +78,15 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     </div>
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+            <?php
+            $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
+            $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
+            $world_percent = ($km / 40075)*100;
+            ?>
             <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
-                <div style="background: #2b2b2b; width: 50%; margin: 1px; height: 4px"></div>
+                <div style="background: #2b2b2b; width: 50%; border-radius: 2px; margin: 1px; height: 4px"></div>
             </div>
+            We rode <?= $km ?> in $days, this <?= $world_percent ?> around the world
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

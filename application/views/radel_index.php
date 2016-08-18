@@ -78,9 +78,9 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     </div>
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-            <table style="border: 1px solid black; border-radius: 3px; width: 100%">
-                <td style="background: black; width: 50%">.</td><td></td>
-            </table>
+            <div style="border: 1px solid black; border-radius: 3px; width: 100%; marg">
+                <div style="background: black; width: 50%">.</div>
+            </div>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

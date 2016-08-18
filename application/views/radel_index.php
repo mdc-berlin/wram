@@ -25,14 +25,14 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
                 <table>
                 <tr style=" border-bottom: 1px solid gray">
-                    <td style="padding: 2px; margin: 2px;" cellspan="2"><b>Top 5</b></td>
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5</b></td>
                 </tr>
                 <?php
                 $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5");
                 foreach($query->result() as $row) {
                     ?><tr>
                     <td>
-                        &nbsp;<?= $row->Name; ?>
+                        &nbsp;<?= $row->Vorname; ?> <?= $row->Name; ?>
                     </td>
                     <td style="text-align: right">
                         <?= $row->km; ?>&nbsp;

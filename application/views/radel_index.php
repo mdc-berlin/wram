@@ -34,7 +34,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table width="100%">
                 <tr style=" border-bottom: 1px solid gray">
-                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5</b></td>
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 <?= $strings['user'][$lang]; ?></b></td>
                 </tr>
                 <?php
                 $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5");
@@ -55,7 +55,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table width="100%">
                 <tr style=" border-bottom: 1px solid gray">
-                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 Abteilung</b></td>
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 <?= $strings['department'][$lang]; ?></b></td>
                 </tr>
                 <?php
                 $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc limit 5");

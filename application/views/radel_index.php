@@ -23,13 +23,30 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 
     <div style="float: right; width: 25%; font-size: 75%">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+                <table>
+                <tr style=" border-bottom: 1px solid gray">
+                    <td style="padding: 2px; margin: 2px;" cellspan="2"><b>Top 5</b></td>
+                </tr>
+                <?php
+                $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5");
+                foreach($query->result() as $row) {
+                    ?><tr>
+                    <td>
+                        &nbsp;<?= $row->Name; ?>
+                    </td>
+                    <td style="text-align: right">
+                        <?= $row->km; ?>&nbsp;
+                    </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
+        <div style="display:none; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px ">
             <?php
             // top 5 users
-//             SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch
-//inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id
-//group by Teilnehmer_id
-//order by km DESC
-//limit 5
+//             SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5
             ?>
             <table>
                 <tr style=" border-bottom: 1px solid gray">
@@ -52,7 +69,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                 ?>
             </table>
         </div>
-        <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+        <div style="display:none; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table>
                 <tr style=" border-bottom: 1px solid gray">
                     <td style="padding: 2px; margin: 2px;"><b>MDC <?= $strings['department'][$lang]; ?></b></td>
@@ -89,7 +106,16 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
                 <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
             </div>
-            We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world.
+            <?php if($lang == "de") {
+                ?>
+                Wir sind mitlerweile <?= $km->result()[0]->total ?>km in <?= $days ?> Tagen gefahren, das sind <?= $world_percent ?>% um den Äquator.
+                <?php
+            } else {
+                ?>
+                We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world.
+                <?php
+            }
+            ?>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

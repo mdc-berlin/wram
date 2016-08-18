@@ -95,6 +95,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     </div>
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+            <div>
             <div style="float: left">
                 <img src="images/world.png" style="width: 48px">
             </div>
@@ -122,6 +123,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
                 ?>
             </div>
             <div style="clear: both" />
+                </div>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

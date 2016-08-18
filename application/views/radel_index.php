@@ -96,34 +96,35 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <div>
-            <div style="float: left">
-                <img src="images/world.png" style="width: 48px">
-            </div>
-            <div style="padding-left: 10px; float: left">
-                <br>
-                <?php
-                $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
-                $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
-                // print_r($km->result()[0]->total);
-                $world_percent = round(($km->result()[0]->total / 40075)*100);
-                $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
-                ?>
-                <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
-                    <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
+                <div style="float: left">
+                    <img src="images/world.png" style="width: 48px">
                 </div>
-                <?php if($lang == "de") {
-                    ?>
-                    Wir sind mitlerweile <?= $km->result()[0]->total ?>km in <?= $days ?> Tagen gefahren, das sind <?= $world_percent ?>% um den Äquator.
+                <div style="padding-left: 10px; float: left">
+                    <br>
                     <?php
-                } else {
+                    $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
+                    $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
+                    // print_r($km->result()[0]->total);
+                    $world_percent = round(($km->result()[0]->total / 40075)*100);
+                    $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                     ?>
-                    We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world.
-                    <?php
-                }
-                ?>
-            </div>
-            <div style="clear: both" >
+                    <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
+                        <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
+                    </div>
+                    <?php if($lang == "de") {
+                        ?>
+                        Wir sind mitlerweile <?= $km->result()[0]->total ?>km in <?= $days ?> Tagen gefahren, das sind <?= $world_percent ?>% um den Äquator.
+                        <?php
+                    } else {
+                        ?>
+                        We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world.
+                        <?php
+                    }
+                    ?>
                 </div>
+                <div style="clear: both" >
+                </div></div>
+            </div>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

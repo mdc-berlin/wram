@@ -44,7 +44,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                         &nbsp;<?= $row->Vorname; ?> <?= $row->Name; ?>
                     </td>
                     <td style="text-align: right">
-                        <?= $row->km; ?>&nbsp;
+                        <?= $row->km; ?>km&nbsp;
                     </td>
                     </tr>
                 <?php
@@ -65,7 +65,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                         &nbsp;<?= $row->Name; ?>
                     </td>
                     <td style="text-align: right">
-                        <?= $row->Km_ges_sum; ?>&nbsp;
+                        <?= $row->Km_ges_sum; ?>km&nbsp;
                     </td>
                     </tr>
                 <?php

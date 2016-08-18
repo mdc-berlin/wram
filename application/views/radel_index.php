@@ -98,7 +98,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             <div style="float: left">
             <img src="images/world.png" style="width: 48px">
             </div>
-            <div style="float: left">
+            <div style="padding-left: 10px; float: left">
                 <br>
             <?php
             $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");

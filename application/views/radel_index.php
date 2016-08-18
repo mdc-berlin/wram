@@ -23,6 +23,8 @@ $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahre
 // print_r($km->result()[0]->total);
 $world_percent = round(($km->result()[0]->total / 40075)*100);
 $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
+
+
 ?>
 
 <div style="">
@@ -43,6 +45,27 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                     </td>
                     <td style="text-align: right">
                         <?= $row->km; ?>&nbsp;
+                    </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
+        <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+            <table width="100%">
+                <tr style=" border-bottom: 1px solid gray">
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 Abteilung</b></td>
+                </tr>
+                <?php
+                $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc limit 5");
+                foreach($query->result() as $row) {
+                    ?><tr>
+                    <td>
+                        &nbsp;<?= $row->Name; ?>
+                    </td>
+                    <td style="text-align: right">
+                        <?= $row->Km_ges_sum; ?>&nbsp;
                     </td>
                     </tr>
                 <?php

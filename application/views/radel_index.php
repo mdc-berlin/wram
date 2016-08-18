@@ -81,7 +81,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             <?php
             $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
             $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
-            $world_percent = ($km / 40075)*100;
+            $world_percent = ($km->result() / 40075)*100;
             ?>
             <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
                 <div style="background: #2b2b2b; width: 50%; border-radius: 2px; margin: 1px; height: 4px"></div>

@@ -99,6 +99,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             <img src="images/world.png" style="width: 48px">
             </div>
             <div style="float: left">
+                <br>
             <?php
             $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
             $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
@@ -120,6 +121,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             }
             ?>
             </div>
+            <div style="clear: both">
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

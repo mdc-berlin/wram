@@ -78,8 +78,8 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
     </div>
     <div style="float: right; width: 70%; ">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
-            <div style="border: 1px solid black; border-radius: 3px; width: 100%; marg">
-                <div style="background: black; width: 50%; padding: 1px; height: 2px">.</div>
+            <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
+                <div style="background: black; width: 50%; margin: 1px; height: 2px"></div>
             </div>
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">

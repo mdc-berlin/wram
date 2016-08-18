@@ -104,7 +104,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table style="width: 100%"><td>
                     <img src="images/world.png" style="width: 48px">
-            </td><td style="padding-left: 15px; padding-top: 15px">
+            </td><td style="padding-left: 15px; padding-top: 15px; width: 100%">
                     <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
                         <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
                     </div>

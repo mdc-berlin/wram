@@ -43,7 +43,8 @@
               }
             ?>
             <li><a href="/"><?php
-                $query = $this->db->get('teilnehmer');
+
+                $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC");
                 echo $query->num_rows();
                 ?> <?= $strings['user'][$lang]; ?></a></li>
           </ul>

@@ -121,7 +121,7 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
             }
             ?>
             </div>
-            <div style="clear: both">
+            <div style="clear: both" />
         </div>
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <?= $strings['text'][$lang]; ?>

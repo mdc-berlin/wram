@@ -545,7 +545,6 @@ class Eintragen_model extends CI_Model {
 				} else {
 					$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name, t.Vorname, t.Name
 						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
-						JOIN teams te ON (t.`Team_id` = te.`id`)
 						WHERE substring_index(Abteilung,' / ',1) = '$group_id'
 						GROUP BY `Teilnehmer_id`");
 

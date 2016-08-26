@@ -129,15 +129,15 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                     <img src="images/world.png" style="width: 48px">
             </td><td style="padding-left: 15px; padding-top: 15px; width: 100%">
                     <div style="border: 1px solid black; border-radius: 3px; width: 100%; ">
-                        <div style="background: #2b2b2b; width: <?= $world_percent ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
+                        <div style="background: #2b2b2b; width: <?php if($world_percent>100) { echo 100; } else { echo $world_percent; } ?>%; border-radius: 2px; margin: 1px; height: 4px"></div>
                     </div>
                     <?php if($lang == "de") {
                         ?>
-                        Wir sind mitlerweile <?= $km->result()[0]->total ?>km in <?= $days ?> Tagen gefahren, das sind <?= $world_percent ?>% um den Äquator.
+                        Wir sind mitlerweile <?= $km->result()[0]->total ?>km in <?= $days ?> Tagen gefahren, das sind <?= $world_percent ?>% um den Äquator
                         <?php
                     } else {
                         ?>
-                        We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world.
+                        We rode <?= $km->result()[0]->total ?>km in <?= $days ?> days, that's <?= $world_percent ?>% around the world
                         <?php
                     }
                     ?>

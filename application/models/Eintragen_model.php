@@ -543,7 +543,7 @@ class Eintragen_model extends CI_Model {
 						WHERE Team_id in ($group_id)
 						GROUP BY `Teilnehmer_id`");
 				} else {
-					$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name, t.Vorname, t.Name
+					$query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum, t.Vorname, t.Name
 						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
 						WHERE substring_index(Abteilung,' / ',1) = '$group_id'
 						GROUP BY `Teilnehmer_id`");

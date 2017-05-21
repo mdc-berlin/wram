@@ -30,7 +30,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
 <div style="">
 
 <?
-print_r($conig);
+print_r($config);
 //                where Datum between '".$config['veranstaltung_start_date']."' and '".$config['veranstaltung_end_date']."'
 
  ?>

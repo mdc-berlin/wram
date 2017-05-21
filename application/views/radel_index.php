@@ -1,6 +1,5 @@
 <?php
 require('translations.php');
-require('../config/radel.php');
 
 
 
@@ -30,7 +29,7 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
 <div style="">
 
 <?
-print_r($config);
+print_r($this->config);
 //                where Datum between '".$config['veranstaltung_start_date']."' and '".$config['veranstaltung_end_date']."'
 
  ?>

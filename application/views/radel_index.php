@@ -29,7 +29,11 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
 
 <div style="">
 
+<?
+print_r($conig);
+//                where Datum between '".$config['veranstaltung_start_date']."' and '".$config['veranstaltung_end_date']."'
 
+ ?>
     <div style="float: right; width: 25%; font-size: 75%">
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table width="100%">
@@ -38,7 +42,6 @@ $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
                 </tr>
                 <?php
                 $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id
-//                where Datum between '".$config['veranstaltung_start_date']."' and '".$config['veranstaltung_end_date']."' 
                 group by Teilnehmer_id order by km DESC limit 5");
                 foreach($query->result() as $row) {
                     ?><tr>

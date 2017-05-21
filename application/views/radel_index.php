@@ -1,6 +1,6 @@
 <?php
 require('translations.php');
-
+require('../config/radel.php');
 
 
 

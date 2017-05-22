@@ -18,7 +18,7 @@ jQuery(function($){
                 dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
                 dayNamesMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
                 dayStatus: 'Setze DD als ersten Wochentag', dateStatus: 'Wähle D, M d',
-                dateFormat: 'dd.mm.yy', firstDay: 1, 
+                dateFormat: 'dd.mm.yy', firstDay: 1,
                 initStatus: 'Wähle ein Datum', isRTL: false};
         $.datepicker.regional['en'] = {clearText: 'clear', clearStatus: 'clear current date',
                 closeText: 'close', closeStatus: 'close without saving',
@@ -39,10 +39,10 @@ jQuery(function($){
 });
 
 function highlightDays(date) {
-	
-	var date_from = '2016-07-31';
-	var date_to   = '2016-09-30';
-	
+
+	var date_from = '2017-06-01';
+	var date_to   = '2017-07-31';
+
 	if (new Date(date) > new Date(date_from) && new Date(date) <= new Date(date_to)) {
 		return [true, '', ''];
 	}
@@ -57,11 +57,11 @@ function date_to_str(date) {
 
 
 $(document).ready(function () {
-	
+
 
 	$('#team_name, #team_join').fadeOut(500);
-	
-	
+
+
 	var attr = $('#team_name').attr('readonly');
 
 
@@ -77,7 +77,7 @@ $(document).ready(function () {
 			else {
 				$(this).prop( "required", true);
 			}
-			
+
 			// sonderfall: checkbox
 			if ($('input[type="checkbox"]:checked').length > 0) {
 				$('#check_text').prop('required', 'true');
@@ -87,7 +87,7 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
+
 
 	$('#team_change').on({
 		change: function() {
@@ -104,7 +104,7 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
+
 	$('#check_arbeit').on({
 		change: function() {
 			var km = $(this).val();
@@ -116,12 +116,12 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
+
 	$('button[name="sql_anrede"]').on({
 		click: function() {
 			$(this).addClass('active');
 			var gender = $(this).val();
-			
+
 			// delete active state from inactive button
 			if (gender == 'm') {
 				$('button#anrede_w').removeClass('active');
@@ -131,19 +131,19 @@ $(document).ready(function () {
 				$('button#anrede_m').removeClass('active');
 				$('i#gender_icon').removeClass('fa-transgender').removeClass('fa-mars').addClass('fa-venus');
 			}
-			
+
 			$('input#gender').val(gender);
 		}
 	});
-	
+
 	if ($('button#anrede_m.active').length > 0) {
 		$('input#gender').val('m');
 	}
 	else if ($('button#anrede_w.active').length > 0) {
 		$('input#gender').val('w');
 	}
-	
-	
+
+
 	$('#sql_sonstige_km').on({
 		change: function() {
 			if ($(this).val() > 0) {
@@ -154,14 +154,14 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
 
-	
+
+
 	var date = new Date();
     date.setDate(date.getDate() - 1);
-    
+
     if (typeof date_set !== "undefined") {
-	    
+
 	    var dateRegex = /(\d{2})-(\d{2})-(\d{4})/gm;
 	    var href = top.location + '';;
 		var lastSegment = href.split('/').pop();
@@ -169,7 +169,7 @@ $(document).ready(function () {
 			lastSegment = '';
 		}
 
-	
+
 		$( "#datepicker" ).datepicker({
 			dayNamesShort: $.datepicker.regional[ language ].dayNamesShort,
 			dayNamesMin: $.datepicker.regional[ language ].dayNamesMin,
@@ -187,22 +187,22 @@ $(document).ready(function () {
 			}
 		}).datepicker( "setDate", date_set );
 	}
-	
+
 	var myDate = new Date();
     var month = myDate.getMonth() + 1;
     var prettyDate = month + '/' + myDate.getDate() + '/' + myDate.getFullYear();
     $("#datepicker").val(prettyDate);
-    	
+
 	if ($('body.start').length > 0) {
 		$('div#container').height( $(window).height() );
 		$("html").backstretch("/radel/images/iStock_000020806369_Large.jpg");
 	}
 	// div#container
-	
+
 	$(window).on('hashchange',function(){
-		
+
 		result = '';
-		
+
 		$.get( "/radel/main/ajax_eintragen/07-08-2015", function( data ) {
 			  $('#myModalLabel').text(location.hash.slice(1) + ' ' + data);
 		});
@@ -210,13 +210,12 @@ $(document).ready(function () {
 
 		$('#myModalLabel').text(location.hash.slice(1) + '<br />' + result);
 
-			str = location.hash.slice(1).split(/-/);			
+			str = location.hash.slice(1).split(/-/);
 			var date_set = new Date( str[1] + "-" + str[0] + "-" + str[2] );
-			
+
 			// alert(date_set);
-		
+
     	$('#myModal').modal('show');
 	});
-	
-});
 
+});

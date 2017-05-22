@@ -41,6 +41,7 @@ print_r($this);
                 </tr>
                 <?php
                 $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id
+                where year(datum) = 2017
                 group by Teilnehmer_id order by km DESC limit 5");
                 foreach($query->result() as $row) {
                     ?><tr>
@@ -62,7 +63,9 @@ print_r($this);
                     <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 <?= $strings['department'][$lang]; ?></b></td>
                 </tr>
                 <?php
-                $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc limit 5");
+                $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`)
+                where year(datum) = 2017
+                Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc limit 5");
                 foreach($query->result() as $row) {
                     ?><tr>
                     <td>

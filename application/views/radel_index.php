@@ -21,7 +21,7 @@ $km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total fr
 $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0) and year(datum) = 2017");
 // print_r($km->result()[0]->total);
 $world_percent = round(($km->result()[0]->total / 40075)*100);
-$days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
+$days = round((time()-mktime(0,0,0,6,1,2017))/(24*3600));
 
 
 ?>

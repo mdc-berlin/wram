@@ -22,7 +22,9 @@ $teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahre
 // print_r($km->result()[0]->total);
 $world_percent = round(($km->result()[0]->total / 40075)*100);
 $days = round((time()-mktime(0,0,0,6,1,2017))/(24*3600));
-
+if($days < 0) {
+    $days = 0;
+}
 
 ?>
 

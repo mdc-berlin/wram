@@ -17,8 +17,8 @@ if($_SERVER['SERVER_NAME']=="wram.mdc-berlin.net") {
 }
 
 
-$km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch");
-$teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0)");
+$km = $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch where year(datum) = 2017");
+$teilnehmer = $this->db->query("select count(distinct(f.Teilnehmer_id)) as fahrer from fahrtenbuch f, teilnehmer t where t.id=f.Teilnehmer_id and (f.Km_zur_Arbeit > 0 OR f.Km_Privat > 0) where year(datum) = 2017");
 // print_r($km->result()[0]->total);
 $world_percent = round(($km->result()[0]->total / 40075)*100);
 $days = round((time()-mktime(0,0,0,8,1,2016))/(24*3600));
@@ -80,7 +80,7 @@ print_r($this);
                 ?>
             </table>
         </div>
-        <div style="display:none; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px ">
+        <div style="display:show; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px ">
             <?php
             // top 5 users
 //             SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5

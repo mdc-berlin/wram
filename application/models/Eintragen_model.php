@@ -599,9 +599,9 @@ class Eintragen_model extends CI_Model {
 		{
 			if ($group_id) {
 				if(is_numeric($group_id)) {
-                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) GROUP BY Team_id order by Km_ges_sum desc");
+                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum ,te.Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) JOIN teams te ON (t.`Team_id` = te.`id`) where year(datum) = 2017 GROUP BY Team_id order by Km_ges_sum desc");
                 } else {
-                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc;");
+                    $query = $this->db->query("SELECT SUM(f.`Km_zur_Arbeit`) AS Km_Arbeit_sum, SUM(f.`Km_Privat`) AS Km_Privat_sum, SUM(f.`Km_zur_Arbeit`)+SUM(f.`Km_Privat`) AS Km_ges_sum , substring_index(t.Abteilung,' / ',1) as Name FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) where year(datum) = 2017 Group by substring_index(t.Abteilung,' / ',1) order by Km_ges_sum desc;");
                 }
 				$ret = '';
 				$cnt = 0;
@@ -742,10 +742,10 @@ class Eintragen_model extends CI_Model {
 		    if ($group_id) {
 		    	if(is_numeric($group_id)) {
 					$query = $this->db->query("SELECT Datum, SUM(f.`Km_zur_Arbeit`) as Km_Arbeit_sum, SUM(f.`Km_Privat`) as Km_Privat_sum
-						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Team_id IN($group_id) GROUP BY Datum");
+						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE Team_id IN($group_id) and year(datum) = 2017 GROUP BY Datum");
 				} else {
 					$query = $this->db->query("SELECT Datum, SUM(f.`Km_zur_Arbeit`) as Km_Arbeit_sum, SUM(f.`Km_Privat`) as Km_Privat_sum
-						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE substring_index(Abteilung,' / ',1) = '$group_id' GROUP BY Datum");
+						FROM teilnehmer t JOIN fahrtenbuch f ON (t.id = f.`Teilnehmer_id`) WHERE substring_index(Abteilung,' / ',1) = '$group_id' and year(datum) = 2017 GROUP BY Datum");
 				}
 				if ($query->num_rows() > 0) {
 					foreach ($query->result() as $row) {

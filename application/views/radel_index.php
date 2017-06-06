@@ -43,7 +43,7 @@ print_r($this);
                 </tr>
                 <tr>
                     <td><?= $strings['entry_distance'][$lang]; ?></td>
-                    <td><?php
+                    <td style="text-align: right"><?php
                     $userobject =  $this->db->query("select * from `teilnehmer` where concat(`Vorname`,' ',`Name`) = '".$user."'");
                     $userid = $userobject->result();
                     //print_r($userid[0]);
@@ -55,13 +55,13 @@ print_r($this);
 
                 <tr>
                     <td>Team</td>
-                    <td><?php
+                    <td style="text-align: right"><?php
                     if($userid[0]->Team_id > 0) echo $this->db->query("select Name from teams where id = ".$userid[0]->Team_id)->result()[0]->Name;
                      ?></td>
                 </tr>
                 <tr>
                     <td> <?= $strings['department'][$lang]; ?></td>
-                    <td><?php echo $userid[0]->Abteilung; ?></td>
+                    <td style="text-align: right"><?php echo $userid[0]->Abteilung; ?></td>
                 </tr>
             </table>
         </div>

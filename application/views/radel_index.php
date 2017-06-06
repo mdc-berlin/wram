@@ -45,7 +45,7 @@ print_r($this);
                     <td>KM</td>
                     <td><?php
                     $userid =  $this->db->query("select * from `teilnehmer` where concat(`Vorname`,' ',`Name`) = '".$user."'");
-                    print_r($userid);
+                    print_r($userid->result());
                     //echo $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id where year(datum) = 2017 group by Teilnehmer_id order by km;"); ?></td>
                 </tr>
                 <tr>

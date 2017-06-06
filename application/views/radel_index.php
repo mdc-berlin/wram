@@ -56,7 +56,7 @@ print_r($this);
                 <tr>
                     <td>Team</td>
                     <td><?php
-                    if($userid[0]->Teams_id) echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id)->result()[0]->Name;
+                    if($userid[0]->Team_id > 0) echo $this->db->query("select Name from teams where id = ".$userid[0]->Team_id)->result()[0]->Name;
                      ?></td>
                 </tr>
                 <tr>

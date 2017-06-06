@@ -49,11 +49,18 @@ print_r($this);
                     //print_r($userid[0]->id);
                     echo $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id
                     where year(datum) = 2017
-                    and id = ".$userid[0]->id." group by Teilnehmer_id order by km;"); ?></td>
+                    and Teilnehmer_id = ".$userid[0]->id." group by Teilnehmer_id order by km;"); ?></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Team</td>
+                    <td><?php
+
+                    echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id);
+                     ?></td>
+                </tr>
+                <tr>
+                    <td>Abteilung</td>
+                    <td><?php echo $userid[0]->Abteilung; ?></td>
                 </tr>
             </table>
         </div>

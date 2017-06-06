@@ -44,7 +44,7 @@
             ?>
             <li><a href="/"><?php
 
-                $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC");
+                $query = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id where year(datum) = 2017 group by Teilnehmer_id order by km DESC");
                 echo $query->num_rows();
                 ?> <?= $strings['user'][$lang]; ?></a></li>
           </ul>

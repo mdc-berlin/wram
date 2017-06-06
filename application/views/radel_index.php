@@ -39,6 +39,21 @@ print_r($this);
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table width="100%">
                 <tr style=" border-bottom: 1px solid gray">
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>You</b></td>
+                </tr>
+                <tr>
+                    <td>KM</td>
+                    <td><?php echo $this->db->query("select (sum(Km_zur_Arbeit) + sum(Km_Privat)) as total from fahrtenbuch where  concat(`Vorname`,' ',`Name`) = '$user' and year(datum) = 2017"); ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
+            <table width="100%">
+                <tr style=" border-bottom: 1px solid gray">
                     <td style="padding: 2px; margin: 2px;" colspan="2"><b>Top 5 <?= $strings['user'][$lang]; ?></b></td>
                 </tr>
                 <?php
@@ -82,7 +97,7 @@ print_r($this);
                 ?>
             </table>
         </div>
-        <div style="display:none; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px ">
+        <div style="display:show; background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px ">
             <?php
             // top 5 users
 //             SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id group by Teilnehmer_id order by km DESC limit 5

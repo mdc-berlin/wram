@@ -39,10 +39,10 @@ print_r($this);
         <div style=" background-color: rgba(255,255,255,0.75); border-radius: 5px; padding: 10px; margin: 10px">
             <table width="100%">
                 <tr style=" border-bottom: 1px solid gray">
-                    <td style="padding: 2px; margin: 2px;" colspan="2"><b>You</b></td>
+                    <td style="padding: 2px; margin: 2px;" colspan="2"><b><?= $strings['yourstats'][$lang]; ?></b></td>
                 </tr>
                 <tr>
-                    <td>KM</td>
+                    <td><?= $strings['entry_distance'][$lang]; ?></td>
                     <td><?php
                     $userobject =  $this->db->query("select * from `teilnehmer` where concat(`Vorname`,' ',`Name`) = '".$user."'");
                     $userid = $userobject->result();
@@ -50,7 +50,7 @@ print_r($this);
                     $result = $this->db->query("SELECT Vorname, Name, (sum(fahrtenbuch.Km_zur_Arbeit)+sum(fahrtenbuch.Km_Privat)) as km FROM fahrtenbuch inner join teilnehmer on fahrtenbuch.Teilnehmer_id = teilnehmer.id
                     where year(datum) = 2017
                     and Teilnehmer_id = ".$userid[0]->id." group by Teilnehmer_id order by km;");
-                    echo $result->result()[0]->km; ?></td>
+                    echo $result->result()[0]->km; ?>km</td>
                 </tr>
 
                 <tr>
@@ -60,7 +60,7 @@ print_r($this);
                      ?></td>
                 </tr>
                 <tr>
-                    <td>Abteilung</td>
+                    <td> <?= $strings['department'][$lang]; ?></td>
                     <td><?php echo $userid[0]->Abteilung; ?></td>
                 </tr>
             </table>

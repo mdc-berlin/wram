@@ -60,6 +60,7 @@ $strings['firma'] = array('de' => 'Meine Firma', 'en' => 'my Cooperation');
 $strings['male'] = array('de' => 'Herr', 'en' => 'male');
 $strings['female'] = array('de' => 'Frau', 'en' => 'female');
 $strings['yourdata'] = array('de' => 'Ihre Daten', 'en' => 'your data');
+$strings['yourstats'] = array('de' => 'deine &Uuml;bersicht', 'en' => 'your stats');
 
 $strings['distance'] = array('de' => 'Ihre Strecke zur Arbeit', 'en' => 'your distance to your job');
 $strings['distance_km'] = array('de' => 'Hin- und Rückweg in vollen Kilometern', 'en' => 'your distance in km (back and forth)');

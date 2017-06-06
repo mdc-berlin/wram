@@ -52,11 +52,11 @@ print_r($this);
                     and Teilnehmer_id = ".$userid[0]->id." group by Teilnehmer_id order by km;");
                     echo $result->result()[0]->km; ?></td>
                 </tr>
+
                 <tr>
                     <td>Team</td>
                     <td><?php
-
-                    echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id)->result()[0]->Name;
+                    if($userid[0]->Teams_id) echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id)->result()[0]->Name;
                      ?></td>
                 </tr>
                 <tr>

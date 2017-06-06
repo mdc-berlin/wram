@@ -56,7 +56,7 @@ print_r($this);
                     <td>Team</td>
                     <td><?php
 
-                    echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id);
+                    echo $this->db->query("select Name from teams where id = ".$userid[0]->Teams_id)->result()[0]->Name;
                      ?></td>
                 </tr>
                 <tr>

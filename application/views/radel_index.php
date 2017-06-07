@@ -66,7 +66,11 @@ print_r($this);
                 </tr>
                 <tr>
                     <td> <?= $strings['department'][$lang]; ?></td>
-                    <td style="text-align: right"><?php echo $userid[0]->Abteilung; ?></td>
+                    <td style="text-align: right"><?php
+                    if($userid) {
+                        echo $userid[0]->Abteilung; 
+                    }
+                    ?></td>
                 </tr>
             </table>
         </div>

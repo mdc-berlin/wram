@@ -1,0 +1,124 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `fahrtenbuch`
+--
+
+DROP TABLE IF EXISTS `fahrtenbuch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fahrtenbuch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Teilnehmer_id` int(11) NOT NULL,
+  `Km_zur_Arbeit` int(3) NOT NULL DEFAULT '0',
+  `Km_Privat` int(3) NOT NULL DEFAULT '0',
+  `Bemerkungen` varchar(250) DEFAULT NULL,
+  `Datum` date NOT NULL DEFAULT '0000-00-00',
+  `Letzte_Aenderung_Datum` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `teilnehmer_datum_uidx` (`Teilnehmer_id`,`Datum`),
+  KEY `teilnehmer_ind` (`Teilnehmer_id`),
+  CONSTRAINT `fahrtenbuch_ibfk_1` FOREIGN KEY (`Teilnehmer_id`) REFERENCES `teilnehmer` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `teams`
+--
+
+DROP TABLE IF EXISTS `teams`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `teams` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Name_uk` (`Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `teilnehmer`
+--
+
+DROP TABLE IF EXISTS `teilnehmer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `teilnehmer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Unternehmen_id` int(11) NOT NULL DEFAULT '0',
+  `Team_id` int(11) DEFAULT NULL,
+  `Is_admin` enum('y','n') NOT NULL DEFAULT 'n',
+  `Anrede` enum('m','w') NOT NULL DEFAULT 'm',
+  `Data_entry` enum('a','m') NOT NULL DEFAULT 'a',
+  `LDAP_Kennung` varchar(255) NOT NULL,
+  `Vorname` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Abteilung` varchar(128) DEFAULT NULL,
+  `Km_zur_Arbeit` decimal(5,0) NOT NULL,
+  `Anschrift_Arbeit` varchar(255) NOT NULL,
+  `PLZ_Arbeit` varchar(63) NOT NULL,
+  `Stadt_Arbeit` varchar(255) NOT NULL DEFAULT 'Berlin',
+  `Anschrift_Privat` varchar(255) NOT NULL,
+  `PLZ_Privat` varchar(63) NOT NULL,
+  `Stadt_Privat` varchar(255) NOT NULL,
+  `Veranstaltung_intern` enum('y','n') NOT NULL DEFAULT 'n',
+  `Veranstaltung_WRAM` enum('y','n') NOT NULL DEFAULT 'n',
+  `Veranstaltung_Jahr` int(11) NOT NULL DEFAULT '2015',
+  `Anmelde_Datum` datetime DEFAULT '0000-00-00 00:00:00',
+  `Letzte_Aenderung_Datum` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `LDAP_Kennung_uk` (`LDAP_Kennung`),
+  UNIQUE KEY `kennung_intern_jahr_uk` (`LDAP_Kennung`,`Veranstaltung_intern`,`Veranstaltung_Jahr`),
+  UNIQUE KEY `kennung_wram_jahr_uk` (`LDAP_Kennung`,`Veranstaltung_WRAM`,`Veranstaltung_Jahr`),
+  KEY `team_ind` (`Team_id`),
+  KEY `Unternehmen_id` (`Unternehmen_id`),
+  CONSTRAINT `teilnehmer_ibfk_1` FOREIGN KEY (`Team_id`) REFERENCES `teams` (`id`),
+  CONSTRAINT `teilnehmer_ibfk_2` FOREIGN KEY (`Unternehmen_id`) REFERENCES `unternehmen` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `unternehmen`
+--
+
+DROP TABLE IF EXISTS `unternehmen`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `unternehmen` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) NOT NULL,
+  `API_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Name_uk` (`Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+--
+-- Dumping data for table `unternehmen`
+--
+
+LOCK TABLES `unternehmen` WRITE;
+/*!40000 ALTER TABLE `unternehmen` DISABLE KEYS */;
+INSERT INTO `unternehmen` VALUES (1,'Company',CompanyNr);
+/*!40000 ALTER TABLE `unternehmen` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

@@ -7,3 +7,5 @@ import.csv
 application/config/database.php
 application/config/radel.php
 download-campusvital.sh
+db/setup.sql
+importer.php

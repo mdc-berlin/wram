@@ -9,3 +9,4 @@ application/config/radel.php
 download-campusvital.sh
 db/setup.sql
 importer.php
+counter.php

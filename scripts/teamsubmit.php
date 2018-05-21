@@ -6,8 +6,8 @@
 // neededs for CodeIgniter
 define("BASEPATH", ".");
 
-include_once('application/config/database.php');
-include_once('application/config/radel.php');
+include_once('../application/config/database.php');
+include_once('../application/config/radel.php');
 
 @$connectionid  = mysql_connect ($db['default']['hostname'],
 								 $db['default']['username'],

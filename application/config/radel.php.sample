@@ -1,0 +1,30 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+
+/*
+	die IDs f�r das Unternehmen:
+
+	1: 'Berliner Energieagentur
+	2: 'Investitionsbank Berlin'
+	3: 'Gewobag Wohnungsbau AG'
+	4: 'Berliner Verkehrsbetriebe (BVG)'
+	5: 'Berliner Wasserbetriebe'
+	6: 'Vivantes'
+	7: 'Berliner Stadtreinigung'
+
+*/
+
+$config['unternehmen_id']		= 0;
+$config['api_key'] = 'api-key-bkommst-du-von-der-bvg';
+$config['veranstaltung_start_date']	= '2017-06-01';
+$config['veranstaltung_end_date']	= '2017-07-31';
+$config['veranstaltung_jahr']	= 2017;
+
+
+// LDAP Server Konfiguration
+$config['ldap_server']	= 'example.com';			// hostname
+$config['ldap_port']	= 389;						// Port des LDAP Servers
+$config['ldap_dn']	= 'dc=example,dc=com';
+$config['ldap_user']	= 'bind-user';
+$config['ldap_pass']	= 'bind-password';

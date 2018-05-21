@@ -4,3 +4,5 @@ radel-*.tar.gz
 .idea/*
 Thumbs.db
 import.csv
+application/config/database.php
+application/config/radel.php

@@ -20,6 +20,8 @@ cp ./application/config/radel.php.sample ./application/config/radel.php
 # danach anpassen
 
 cp ./db/setup.sql.sample ./db/setup.sql
+
+## hier fehlt nocht ein bisschen was in der doku
 ```
 
 ## Kerberos
@@ -28,7 +30,7 @@ cp ./db/setup.sql.sample ./db/setup.sql
 
 ```
 yum install mod_auth_kerb
-#oder
+# oder
 apt-get install libapache2-mod-auth-kerb
 ```
 
